@@ -14,8 +14,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.items.IItemHandler;
+import net.minecraft.world.level.block.ChestBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.ChestType;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -194,7 +199,30 @@ public final class RtsLinkedStorageResolver {
             return;
         }
         session.linkedStorageInfo.removeIf(ref -> ref == null || ref.dimension() == null || ref.pos() == null);
+        removeDuplicateDoubleChestRefs(player, session);
         session.linkedStorageInfo.cleanupOrphans();
+    }
+
+    private static void removeDuplicateDoubleChestRefs(ServerPlayer player, RtsStorageSession session) {
+        if (player == null) {
+            return;
+        }
+        ServerLevel level = player.serverLevel();
+        Set<LinkedStorageRef> canonicalRefs = new HashSet<>();
+        session.linkedStorageInfo.removeIf(ref -> !canonicalRefs.add(canonicalStorageRef(level, ref)));
+    }
+
+    private static LinkedStorageRef canonicalStorageRef(ServerLevel level, LinkedStorageRef ref) {
+        if (!level.dimension().equals(ref.dimension()) || !level.hasChunkAt(ref.pos())) {
+            return ref;
+        }
+        BlockState state = level.getBlockState(ref.pos());
+        if (!(state.getBlock() instanceof ChestBlock) || state.getValue(ChestBlock.TYPE) == ChestType.SINGLE) {
+            return ref;
+        }
+        BlockPos connected = ref.pos().relative(ChestBlock.getConnectedDirection(state));
+        BlockPos canonical = ref.pos().asLong() <= connected.asLong() ? ref.pos() : connected;
+        return new LinkedStorageRef(ref.dimension(), canonical.immutable());
     }
 
     public static boolean isLinkedRefWorldVisible(ServerPlayer player, RtsStorageSession session, LinkedStorageRef ref) {

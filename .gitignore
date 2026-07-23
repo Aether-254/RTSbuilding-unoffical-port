@@ -1,1 +1,3 @@
 /benchmark-visualization/benchmark.db
+/.gradle/
+/build/

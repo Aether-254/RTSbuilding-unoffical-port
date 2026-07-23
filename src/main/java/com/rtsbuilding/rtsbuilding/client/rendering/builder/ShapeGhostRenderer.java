@@ -145,12 +145,10 @@ public final class ShapeGhostRenderer {
         }
 
         // ── Build mode (placement ghost) ──
-        // 批量建造不提前渲染整片方块虚影，避免库存不足时误导玩家以为所有目标都会放置。
         boolean usePlacementLayerSettings = shouldUsePlacementPreviewSettings(preview);
-        boolean renderBlockGhost = preview.blocks().size() <= 1
-                && (usePlacementLayerSettings
-                        ? com.rtsbuilding.rtsbuilding.Config.isPlacementBlockGhostPreviewEnabled()
-                        : true);
+        boolean renderBlockGhost = usePlacementLayerSettings
+                ? com.rtsbuilding.rtsbuilding.Config.isPlacementBlockGhostPreviewEnabled()
+                : true;
         BuildGhostRenderer.render(minecraft, preview, poseStack, lineBuffer, fillBuffer,
                 renderBlockGhost,
                 shouldRenderPlacementWireframe(preview));

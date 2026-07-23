@@ -3,6 +3,7 @@ package com.rtsbuilding.rtsbuilding.server.service.placement;
 import com.rtsbuilding.rtsbuilding.compat.create.BlueprintCreatePlacementCompat;
 import com.rtsbuilding.rtsbuilding.server.data.PlacedBlockTrackerData;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
@@ -84,6 +85,7 @@ public final class BlockPlacer {
     public static void finishBlueprintPlacement(
             ServerLevel level, BlockPos pos, BlockState state, @Nullable ItemStack stack) {
         BlueprintCreatePlacementCompat.finishPlacement(level, pos, state, stack);
+        notifyPlacedBlockOfNeighbors(level, pos);
     }
 
     /**
@@ -109,6 +111,19 @@ public final class BlockPlacer {
         }
         if (state != null) {
             state.getBlock().setPlacedBy(level, pos, state, placer, stack);
+            notifyPlacedBlockOfNeighbors(level, pos);
+        }
+    }
+
+    /**
+     * Direct state placement does not run {@link BlockItem}'s placement hook. Notify the newly
+     * placed block once for every adjacent block so pipe/cable implementations can establish
+     * their own connection state just as they do after a normal player placement.
+     */
+    public static void notifyPlacedBlockOfNeighbors(ServerLevel level, BlockPos pos) {
+        for (Direction direction : Direction.values()) {
+            BlockPos neighborPos = pos.relative(direction);
+            level.neighborChanged(pos, level.getBlockState(neighborPos).getBlock(), neighborPos);
         }
     }
 }
