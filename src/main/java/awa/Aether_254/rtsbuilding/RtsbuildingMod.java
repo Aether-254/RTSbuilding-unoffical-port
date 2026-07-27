@@ -84,7 +84,6 @@ public class RtsbuildingMod implements ModInitializer {
      */
     @Override
     public void onInitialize() {
-        Config.register();
         IEventBus modEventBus = new IEventBus() {};
         RtsEntities.register(modEventBus);
         RtsBlocks.register(modEventBus);
