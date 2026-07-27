@@ -103,7 +103,8 @@ public class RtsbuildingMod implements ModInitializer {
         ServerLifecycleEvents.SERVER_STOPPING.register(GameEvents::onServerStopping);
         ServerLifecycleEvents.SERVER_STOPPED.register(GameEvents::onServerStopped);
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) ->
-                GameEvents.onPlayerLogin(handler.player));
+                server.execute(() ->
+                               GameEvents.onPlayerLogin(handler.player)));
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) ->
                 GameEvents.onPlayerLogout(handler.player));
         ServerEntityWorldChangeEvents.AFTER_PLAYER_CHANGE_WORLD.register((player, origin, destination) ->
