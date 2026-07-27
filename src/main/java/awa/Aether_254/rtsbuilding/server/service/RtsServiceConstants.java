@@ -8,7 +8,7 @@ package awa.Aether_254.rtsbuilding.server.service;
  * 类本身为不可实例化的 final 工具类。
  *
  * <p><b>设计原则：</b>这些是<b>内部引擎参数</b>，不是面向用户的配置——
- * 它们有意保持在 {@code Config.java}（使用 NeoForge 的 {@code ModConfigSpec}）之外，
+ * 它们有意保持在 {@code Config.java}（使用 Cloth Config API）之外，
  * 避免用对服务器管理员无实际用途的调优旋钮污染服务器的配置文件。
  *
  * <p><b>参数分组：</b>

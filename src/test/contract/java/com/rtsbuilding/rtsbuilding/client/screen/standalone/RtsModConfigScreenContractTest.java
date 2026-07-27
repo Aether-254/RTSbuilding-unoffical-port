@@ -11,18 +11,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RtsModConfigScreenContractTest {
     @Test
-    void moduleConfigScreenDoesNotDuplicateClientVisualSettings() throws IOException {
+    void moduleConfigScreenUsesClothApiEntryPoint() throws IOException {
         String source = Files.readString(Path.of(
                 "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/RtsModConfigScreen.java"));
 
-        assertFalse(source.contains("placementBlockGhostPreview"));
-        assertFalse(source.contains("placeBlockGhostAnimation"));
-        assertFalse(source.contains("destroyBlockGhostAnimation"));
-        assertFalse(source.contains("placementWireframePreview"));
-        assertFalse(source.contains("placeWireframeAnimation"));
-        assertFalse(source.contains("destroyWireframeAnimation"));
-        assertFalse(source.contains("rangeDestroySkeleton"));
-        assertFalse(source.contains("config.rtsbuilding.section.rendering"));
+        assertTrue(source.contains("Config.createConfigScreen"));
+        assertTrue(source.contains("ConfigBuilder"));
     }
 
     @Test
@@ -40,17 +34,12 @@ class RtsModConfigScreenContractTest {
     }
 
     @Test
-    void generalSettingsSavePathDoesNotWriteClientVisualConfig() throws IOException {
+    void configUsesClothApiAndPersistsToConfigDirectory() throws IOException {
         String config = Files.readString(Path.of("src/main/java/awa/Aether_254/rtsbuilding/Config.java"));
-        String generalSave = slice(config, "public static void saveGeneralSettings", "public static void saveAreaMineLimitSettings");
-        String areaSave = slice(config, "public static void saveAreaMineLimitSettings", "public static boolean isPlacementBlockGhostPreviewEnabled");
 
-        assertFalse(generalSave.contains("CLIENT_SPEC.save()"));
-        assertFalse(generalSave.contains("USE_BLOCK_GHOST_PREVIEW"));
-        assertFalse(generalSave.contains("USE_WIREFRAME_PREVIEW"));
-        assertTrue(areaSave.contains("SERVER_SPEC.save()"));
-        assertTrue(areaSave.contains("AREA_MINE_MAX_WIDTH.set"));
-        assertTrue(areaSave.contains("AREA_DESTROY_MAX_TARGETS.set"));
+        assertTrue(config.contains("ConfigBuilder"));
+        assertTrue(config.contains("FabricLoader.getInstance().getConfigDir"));
+        assertTrue(config.contains("saveConfig"));
     }
 
     private static String slice(String source, String start, String end) {
