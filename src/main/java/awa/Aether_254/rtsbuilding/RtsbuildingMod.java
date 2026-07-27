@@ -84,6 +84,16 @@ public class RtsbuildingMod implements ModInitializer {
      */
     @Override
     public void onInitialize() {
+        try {
+            // 这会让 forgeconfigapiport 从 config/rtsbuilding-common.toml 等文件加载配置
+            // 如果文件不存在，会使用默认值并创建文件
+            net.neoforged.neoforge.common.ModConfigSpec.load(Config.SPEC);
+            net.neoforged.neoforge.common.ModConfigSpec.load(Config.CLIENT_SPEC);
+            net.neoforged.neoforge.common.ModConfigSpec.load(Config.SERVER_SPEC);
+            LOGGER.info("RTSBuilding 配置已加载");
+        } catch (Exception e) {
+            LOGGER.warn("配置加载失败，将使用默认值", e);
+        }
         IEventBus modEventBus = new IEventBus() {};
         RtsEntities.register(modEventBus);
         RtsBlocks.register(modEventBus);
