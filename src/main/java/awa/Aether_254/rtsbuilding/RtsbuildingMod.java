@@ -84,32 +84,6 @@ public class RtsbuildingMod implements ModInitializer {
      */
     @Override
     public void onInitialize() {
-        try {
-            // 这会让 forgeconfigapiport 从 config/rtsbuilding-common.toml 等文件加载配置
-            // 如果文件不存在，会使用默认值并创建文件
-// Replace your lines 90-92 with:
-net.fabricmc.loader.api.FabricLoader.getInstance().getModContainer("rtsbuilding")
-    .ifPresent(container -> {
-        net.neoforged.fml.config.ModConfig.registerConfig(
-            container,
-            net.neoforged.fml.config.ModConfig.Type.COMMON,
-            Config.SPEC
-        );
-        net.neoforged.fml.config.ModConfig.registerConfig(
-            container,
-            net.neoforged.fml.config.ModConfig.Type.CLIENT,
-            Config.CLIENT_SPEC
-        );
-        net.neoforged.fml.config.ModConfig.registerConfig(
-            container,
-            net.neoforged.fml.config.ModConfig.Type.SERVER,
-            Config.SERVER_SPEC
-        );
-    });
-            LOGGER.info("RTSBuilding 配置已加载");
-        } catch (Exception e) {
-            LOGGER.warn("配置加载失败，将使用默认值", e);
-        }
         IEventBus modEventBus = new IEventBus() {};
         RtsEntities.register(modEventBus);
         RtsBlocks.register(modEventBus);
