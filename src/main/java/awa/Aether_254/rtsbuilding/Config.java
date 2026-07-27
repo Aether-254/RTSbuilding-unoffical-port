@@ -428,25 +428,7 @@ public class Config {
         return Math.max(min, Math.min(max, value));
     }
 
-    public static void register() {
-    net.neoforged.fml.ModLoadingContext.get()
-            .registerConfig(
-                    net.neoforged.fml.config.ModConfig.Type.COMMON,
-                    SPEC
-            );
 
-    net.neoforged.fml.ModLoadingContext.get()
-            .registerConfig(
-                    net.neoforged.fml.config.ModConfig.Type.CLIENT,
-                    CLIENT_SPEC
-            );
-
-    net.neoforged.fml.ModLoadingContext.get()
-            .registerConfig(
-                    net.neoforged.fml.config.ModConfig.Type.SERVER,
-                    SERVER_SPEC
-            );
-}
 
 }
 
