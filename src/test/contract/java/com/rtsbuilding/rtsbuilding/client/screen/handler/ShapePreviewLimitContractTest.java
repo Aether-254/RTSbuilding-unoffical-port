@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.handler;
+package awa.Aether_254.rtsbuilding.client.screen.handler;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class ShapePreviewLimitContractTest {
     @Test
     void ordinaryAndAdvancedPreviewsClampBeforeGeometryGenerationAndReuseThePlan() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/handler/ScreenShapeController.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/handler/ScreenShapeController.java"));
         String method = methodBody(source, "private List<BlockPos> generateShapePositions");
 
         int clamp = method.indexOf("ShapeSelectionLimiter.clampDimensions");
@@ -35,11 +35,11 @@ class ShapePreviewLimitContractTest {
     @Test
     void sharedAnimatorFeedsNormalPreviewAdvancedHandlesAndDestroyEnvelope() throws IOException {
         String controller = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/handler/ScreenShapeController.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/handler/ScreenShapeController.java"));
         String selectionRenderer = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/builder/AdvancedShapeSelectionBoxRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/builder/AdvancedShapeSelectionBoxRenderer.java"));
         String ghostRenderer = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/builder/ShapeGhostRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/builder/ShapeGhostRenderer.java"));
 
         assertTrue(controller.contains("this.shapeBoxAnimator.renderAabb(this.generatedShapeBounds)"));
         assertTrue(selectionRenderer.contains("shapeSelectionRenderAabb()"));

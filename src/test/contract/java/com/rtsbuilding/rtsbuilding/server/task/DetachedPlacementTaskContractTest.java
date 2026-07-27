@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** 防止 detached placement 后续退回 Session Job 双状态。 */
 class DetachedPlacementTaskContractTest {
-    private static final Path MAIN = Path.of("src/main/java/com/rtsbuilding/rtsbuilding");
+    private static final Path MAIN = Path.of("src/main/java/awa/Aether_254/rtsbuilding");
 
     @Test
     void placementPayloadContainsOnlyStableIdsAndPureState() throws IOException {
@@ -20,7 +20,7 @@ class DetachedPlacementTaskContractTest {
         assertTrue(payload.contains("ResourceKey<Level> dimension"));
         assertTrue(payload.contains("PlacementTaskState state"));
         assertFalse(payload.contains("import net.minecraft.server.level.ServerPlayer"));
-        assertFalse(payload.contains("import com.rtsbuilding.rtsbuilding.server.storage.session.RtsStorageSession"));
+        assertFalse(payload.contains("import awa.Aether_254.rtsbuilding.server.storage.session.RtsStorageSession"));
         assertFalse(payload.contains("ServerPlayer player,"));
         assertFalse(payload.contains("RtsStorageSession session,"));
         assertFalse(payload.contains("PlaceBatchJob job,"));

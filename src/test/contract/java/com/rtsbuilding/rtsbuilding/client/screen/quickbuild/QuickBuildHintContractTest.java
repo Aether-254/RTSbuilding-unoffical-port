@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.quickbuild;
+package awa.Aether_254.rtsbuilding.client.screen.quickbuild;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -16,7 +16,7 @@ class QuickBuildHintContractTest {
     @Test
     void buildHintExplainsRightClickLockBeforeEnterConfirmation() throws IOException {
         String panel = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/quickbuild/QuickBuildPanel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/quickbuild/QuickBuildPanel.java"));
         JsonObject zhCn = JsonParser.parseString(Files.readString(Path.of(
                 "src/main/resources/assets/rtsbuilding/lang/zh_cn.json"))).getAsJsonObject();
 

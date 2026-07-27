@@ -1,8 +1,8 @@
-package com.rtsbuilding.rtsbuilding.client.screen.shape;
+package awa.Aether_254.rtsbuilding.client.screen.shape;
 
-import com.rtsbuilding.rtsbuilding.client.screen.quickbuild.BuildShape;
-import com.rtsbuilding.rtsbuilding.client.screen.culling.RtsCullingBox;
-import com.rtsbuilding.rtsbuilding.common.shape.model.ShapeFillMode;
+import awa.Aether_254.rtsbuilding.client.screen.quickbuild.BuildShape;
+import awa.Aether_254.rtsbuilding.client.screen.culling.RtsCullingBox;
+import awa.Aether_254.rtsbuilding.common.shape.model.ShapeFillMode;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import org.junit.jupiter.api.Test;

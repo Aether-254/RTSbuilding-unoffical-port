@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import net.minecraft.nbt.CompoundTag;
 import org.junit.jupiter.api.Test;

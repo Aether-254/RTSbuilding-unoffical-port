@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.standalone;
+package awa.Aether_254.rtsbuilding.client.screen.standalone;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class RtsModConfigScreenContractTest {
     @Test
     void moduleConfigScreenDoesNotDuplicateClientVisualSettings() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/RtsModConfigScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/RtsModConfigScreen.java"));
 
         assertFalse(source.contains("placementBlockGhostPreview"));
         assertFalse(source.contains("placeBlockGhostAnimation"));
@@ -28,7 +28,7 @@ class RtsModConfigScreenContractTest {
     @Test
     void moduleConfigScreenExposesServerAreaMineLimits() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/RtsModConfigScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/RtsModConfigScreen.java"));
 
         assertTrue(source.contains("config.rtsbuilding.section.area_mining"));
         assertTrue(source.contains("config.rtsbuilding.area_mine_max_width"));
@@ -41,7 +41,7 @@ class RtsModConfigScreenContractTest {
 
     @Test
     void generalSettingsSavePathDoesNotWriteClientVisualConfig() throws IOException {
-        String config = Files.readString(Path.of("src/main/java/com/rtsbuilding/rtsbuilding/Config.java"));
+        String config = Files.readString(Path.of("src/main/java/awa/Aether_254/rtsbuilding/Config.java"));
         String generalSave = slice(config, "public static void saveGeneralSettings", "public static void saveAreaMineLimitSettings");
         String areaSave = slice(config, "public static void saveAreaMineLimitSettings", "public static boolean isPlacementBlockGhostPreviewEnabled");
 

@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.placement;
+package awa.Aether_254.rtsbuilding.server.service.placement;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +12,13 @@ class RtsBatchPlacementQuickBuildContractTest {
     @Test
     void publicBatchPlacementKeepsQuickBuildFastPath() throws IOException {
         assertBatchEntryUsesQuickBuild(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/RtsPlacementService.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/RtsPlacementService.java"));
     }
 
     @Test
     void implBatchPlacementKeepsQuickBuildFastPath() throws IOException {
         assertBatchEntryUsesQuickBuild(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/impl/RtsPlacementServiceImpl.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/impl/RtsPlacementServiceImpl.java"));
     }
 
     private static void assertBatchEntryUsesQuickBuild(Path sourcePath) throws IOException {

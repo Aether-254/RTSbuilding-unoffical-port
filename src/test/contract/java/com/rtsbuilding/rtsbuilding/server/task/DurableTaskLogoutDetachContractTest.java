@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,9 +15,9 @@ class DurableTaskLogoutDetachContractTest {
     @Test
     void sessionLogoutDetachesTaskEngineInsteadOfCancellingOwnerLane() throws IOException {
         String sessionService = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/impl/RtsSessionServiceImpl.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/impl/RtsSessionServiceImpl.java"));
         String taskEngine = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/task/RtsTaskEngine.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/task/RtsTaskEngine.java"));
 
         assertTrue(sessionService.contains("RtsTaskEngine.INSTANCE.detachPlayer(player.getUUID())"));
         assertFalse(sessionService.contains("RtsTaskEngine.INSTANCE.onPlayerLogout(player.getUUID())"));

@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.network.blueprint;
+package awa.Aether_254.rtsbuilding.network.blueprint;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** 防止蓝图放置链路再次丢失可用于幂等接纳的稳定提交身份。 */
 class BlueprintSubmissionIdentityContractTest {
-    private static final Path MAIN = Path.of("src/main/java/com/rtsbuilding/rtsbuilding");
+    private static final Path MAIN = Path.of("src/main/java/awa/Aether_254/rtsbuilding");
 
     @Test
     void payloadTransportsSubmissionIdInBothCodecDirections() throws IOException {

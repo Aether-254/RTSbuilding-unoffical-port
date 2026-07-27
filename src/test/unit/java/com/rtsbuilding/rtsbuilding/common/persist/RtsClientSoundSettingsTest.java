@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.common.persist;
+package awa.Aether_254.rtsbuilding.common.persist;
 
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;

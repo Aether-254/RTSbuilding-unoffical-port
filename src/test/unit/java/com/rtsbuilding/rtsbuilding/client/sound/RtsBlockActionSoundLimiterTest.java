@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.sound;
+package awa.Aether_254.rtsbuilding.client.sound;
 
 import org.junit.jupiter.api.Test;
 

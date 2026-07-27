@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.compat.remote;
+package awa.Aether_254.rtsbuilding.compat.remote;
 
 import net.p3pp3rf1y.sophisticatedbackpacks.common.gui.FakeBackpackMenu;
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ class RtsRemoteMenuCompatSmokeTest {
     @Test
     void transferEntrypointsKeepLocalSophisticatedGuard() throws Exception {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/transfer/RtsTransferPlayerIntegration.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/transfer/RtsTransferPlayerIntegration.java"));
 
         assertTrue(source.contains("RtsRemoteMenuCompat.isLocalSophisticatedMenu(menu, player)"),
                 "Shift 导入本地 Sophisticated 菜单时必须直接 return，避免把同一份槽位同时当来源和目标。");

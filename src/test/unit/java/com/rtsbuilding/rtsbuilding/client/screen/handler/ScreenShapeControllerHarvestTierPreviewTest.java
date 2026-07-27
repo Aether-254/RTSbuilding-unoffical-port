@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.client.screen.handler;
+package awa.Aether_254.rtsbuilding.client.screen.handler;
 
-import com.rtsbuilding.rtsbuilding.client.screen.shape.ShapeDataRecords;
+import awa.Aether_254.rtsbuilding.client.screen.shape.ShapeDataRecords;
 import net.minecraft.core.BlockPos;
 import org.junit.jupiter.api.Test;
 

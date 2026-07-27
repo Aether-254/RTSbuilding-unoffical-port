@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.util;
+package awa.Aether_254.rtsbuilding.util;
 
 import org.junit.jupiter.api.Test;
 

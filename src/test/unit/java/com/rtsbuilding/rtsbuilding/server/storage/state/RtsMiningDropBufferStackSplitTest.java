@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.storage.state;
+package awa.Aether_254.rtsbuilding.server.storage.state;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

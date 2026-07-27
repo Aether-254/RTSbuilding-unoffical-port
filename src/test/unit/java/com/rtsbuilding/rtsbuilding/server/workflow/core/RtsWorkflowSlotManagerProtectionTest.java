@@ -1,8 +1,8 @@
-package com.rtsbuilding.rtsbuilding.server.workflow.core;
+package awa.Aether_254.rtsbuilding.server.workflow.core;
 
-import com.rtsbuilding.rtsbuilding.server.workflow.model.RtsWorkflowPriority;
-import com.rtsbuilding.rtsbuilding.server.workflow.model.RtsWorkflowType;
-import com.rtsbuilding.rtsbuilding.server.workflow.service.RtsWorkflowSlotManager;
+import awa.Aether_254.rtsbuilding.server.workflow.model.RtsWorkflowPriority;
+import awa.Aether_254.rtsbuilding.server.workflow.model.RtsWorkflowType;
+import awa.Aether_254.rtsbuilding.server.workflow.service.RtsWorkflowSlotManager;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

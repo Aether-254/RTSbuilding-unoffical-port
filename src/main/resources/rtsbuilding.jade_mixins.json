@@ -1,6 +1,6 @@
 {
   "required": false,
-  "package": "com.rtsbuilding.rtsbuilding.mixin",
+  "package": "awa.Aether_254.rtsbuilding.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
     "JadeClientProxyMixin",

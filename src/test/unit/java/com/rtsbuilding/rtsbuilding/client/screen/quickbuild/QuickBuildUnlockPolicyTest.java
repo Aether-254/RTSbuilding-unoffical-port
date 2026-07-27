@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.client.screen.quickbuild;
+package awa.Aether_254.rtsbuilding.client.screen.quickbuild;
 
-import com.rtsbuilding.rtsbuilding.client.screen.ultimine.AreaMineShape;
+import awa.Aether_254.rtsbuilding.client.screen.ultimine.AreaMineShape;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

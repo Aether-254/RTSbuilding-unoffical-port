@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.mining;
+package awa.Aether_254.rtsbuilding.server.service.mining;
 
 import net.minecraft.core.BlockPos;
 import org.junit.jupiter.api.Test;
@@ -48,7 +48,7 @@ class AreaMineLimitBoxContractTest {
     @Test
     void queuedAreaMineUsesAxisAndVolumeLimitBox() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/mining/RtsUltimineProcessor.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/mining/RtsUltimineProcessor.java"));
         String method = slice(source, "public static int queueAreaMine", "static AreaMineLimitBox limitAreaMineBox");
 
         assertTrue(method.contains("limitAreaMineBox(minX, maxX, minY, maxY, minZ, maxZ)"));

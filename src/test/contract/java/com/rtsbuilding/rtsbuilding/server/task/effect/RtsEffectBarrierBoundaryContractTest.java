@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task.effect;
+package awa.Aether_254.rtsbuilding.server.task.effect;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /** 防止提交屏障退化为隐藏的世界或物品事务执行器。 */
 class RtsEffectBarrierBoundaryContractTest {
     private static final Path EFFECT_PACKAGE = Path.of(
-            "src/main/java/com/rtsbuilding/rtsbuilding/server/task/effect");
+            "src/main/java/awa/Aether_254/rtsbuilding/server/task/effect");
 
     @Test
     void barrierPackageContainsNoGameplayTransactionTypes() throws IOException {
@@ -65,7 +65,7 @@ class RtsEffectBarrierBoundaryContractTest {
     @Test
     void developerEffectMetricsUseIncrementalCountersInsteadOfObjectGraphScans() throws IOException {
         String metrics = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/RtsDeveloperMetrics.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/RtsDeveloperMetrics.java"));
         assertTrue(metrics.contains("recordEffectCommit"));
         assertTrue(metrics.contains("effectCommittedKinds"));
         assertTrue(metrics.contains("effectDeferredTargets"));

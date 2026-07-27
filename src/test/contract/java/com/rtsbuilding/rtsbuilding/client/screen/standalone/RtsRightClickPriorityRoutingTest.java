@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.standalone;
+package awa.Aether_254.rtsbuilding.client.screen.standalone;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class RtsRightClickPriorityRoutingTest {
     @Test
     void selectedStorageItemSingleBlockNormalRightClickInteractsBeforePlacement() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "private boolean runPrimaryActionAt(double mouseX, double mouseY, int mouseButton)");
 
         int selectedItemBranch = body.indexOf("if (this.controller.hasSelectedItem())");
@@ -42,7 +42,7 @@ class RtsRightClickPriorityRoutingTest {
     @Test
     void selectedStorageItemShapePlacementBypassesNormalInteractBranch() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "private boolean runPrimaryActionAt(double mouseX, double mouseY, int mouseButton)");
 
         int selectedItemBranch = body.indexOf("if (this.controller.hasSelectedItem())");
@@ -61,7 +61,7 @@ class RtsRightClickPriorityRoutingTest {
     @Test
     void mainHandNormalRightClickInteractsAndShiftRightClickPlacesFirst() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "private boolean runPrimaryActionAt(double mouseX, double mouseY, int mouseButton)");
 
         int toolSlotInteract = body.indexOf("this.controller.interactBlockWithToolSlot");

@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -79,7 +79,7 @@ class BatchHotPathContractTest {
     void progressiveMiningAnimationDoesNotWaitForDiskAckAtEveryStage() throws IOException {
         String runtime = readMain("server/task/RtsDurableTaskExecutionRuntime.java");
         assertTrue(runtime.contains("MiningProgressOverlay"));
-        assertTrue(runtime.contains("result.outcome() == com.rtsbuilding.rtsbuilding.server.task.mining.MiningSliceResult.Outcome.NEXT_TICK"));
+        assertTrue(runtime.contains("result.outcome() == awa.Aether_254.rtsbuilding.server.task.mining.MiningSliceResult.Outcome.NEXT_TICK"));
         assertTrue(runtime.contains("new MiningProgressOverlay("));
         assertTrue(runtime.contains("return new DurableTaskScheduler.SliceResult(snapshot, result.processedUnits())"));
     }
@@ -104,7 +104,7 @@ class BatchHotPathContractTest {
         assertTrue(miningState.contains("session.miningDropBuffer.isFull()"));
         assertTrue(miningState.contains("MiningSliceResult.Outcome.WAITING, MiningWaitHint.buffer()"));
         assertTrue(waitHint.contains("new MiningWaitHint(\"buffer\", \"mining_drop_buffer\")"));
-        assertTrue(miningBody.contains("new com.rtsbuilding.rtsbuilding.server.task.persistence.TaskWaitKey("));
+        assertTrue(miningBody.contains("new awa.Aether_254.rtsbuilding.server.task.persistence.TaskWaitKey("));
     }
 
     @Test
@@ -205,6 +205,6 @@ class BatchHotPathContractTest {
     }
 
     private static String readMain(String relative) throws IOException {
-        return Files.readString(Path.of("src/main/java/com/rtsbuilding/rtsbuilding").resolve(relative));
+        return Files.readString(Path.of("src/main/java/awa/Aether_254/rtsbuilding").resolve(relative));
     }
 }

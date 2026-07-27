@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.mode;
+package awa.Aether_254.rtsbuilding.client.screen.mode;
 
 import org.junit.jupiter.api.Test;
 

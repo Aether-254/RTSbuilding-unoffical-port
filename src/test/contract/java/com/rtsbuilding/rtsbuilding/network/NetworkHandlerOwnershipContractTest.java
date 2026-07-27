@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.network;
+package awa.Aether_254.rtsbuilding.network;
 
 import org.junit.jupiter.api.Test;
 
@@ -27,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
  */
 class NetworkHandlerOwnershipContractTest {
     private static final Path NETWORK_ROOT = Path.of(
-            "src/main/java/com/rtsbuilding/rtsbuilding/network");
+            "src/main/java/awa/Aether_254/rtsbuilding/network");
     private static final Path ROOT_REGISTRAR = NETWORK_ROOT.resolve("RtsPayloadRegistrar.java");
     private static final Pattern C2S_REGISTRATION = Pattern.compile(
             "registrar\\s*\\.\\s*playToServer\\s*\\(\\s*"

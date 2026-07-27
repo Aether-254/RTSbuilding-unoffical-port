@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -39,6 +39,6 @@ class DestructionDetachedBoundaryContractTest {
     }
 
     private static String read(String relative) throws IOException {
-        return Files.readString(Path.of("src/main/java/com/rtsbuilding/rtsbuilding", relative));
+        return Files.readString(Path.of("src/main/java/awa/Aether_254/rtsbuilding", relative));
     }
 }

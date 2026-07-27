@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.rendering;
+package awa.Aether_254.rtsbuilding.client.rendering;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class GhostBlockModelRendererContractTest {
     @Test
     void sharedGhostRendererPassesWorldPositionToBlockModelTessellator() throws Exception {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/util/GhostBlockModelRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/util/GhostBlockModelRenderer.java"));
 
         assertTrue(source.contains("tesselateBlock("),
                 "Ghost block previews must use the world-position-aware model tessellator.");
@@ -40,11 +40,11 @@ class GhostBlockModelRendererContractTest {
 
     private static List<String> ghostModelCallSites() {
         return List.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/animation/DestroyGhostRenderer.java",
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/animation/PendingGhostRenderer.java",
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/animation/ConfirmedPlacementRenderer.java",
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/builder/BuildGhostModelRenderer.java",
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/blueprint/BlueprintGhostBlockModelRenderer.java"
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/animation/DestroyGhostRenderer.java",
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/animation/PendingGhostRenderer.java",
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/animation/ConfirmedPlacementRenderer.java",
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/builder/BuildGhostModelRenderer.java",
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/blueprint/BlueprintGhostBlockModelRenderer.java"
         );
     }
 }

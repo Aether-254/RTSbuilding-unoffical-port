@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "tools",
   "key": {
-    "I": {"tag": "c:ingots/iron"},
-    "P": {"item": "rtsbuilding:harvest_tier_stone"},
-    "R": {"tag": "c:dusts/redstone"}
+    "I": "#c:ingots/iron",
+    "P": "rtsbuilding:harvest_tier_stone",
+    "R": "#c:dusts/redstone"
   },
   "pattern": [
     " I ",

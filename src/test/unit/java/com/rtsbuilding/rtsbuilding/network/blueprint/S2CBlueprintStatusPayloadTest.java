@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.network.blueprint;
+package awa.Aether_254.rtsbuilding.network.blueprint;
 
 import org.junit.jupiter.api.Test;
 

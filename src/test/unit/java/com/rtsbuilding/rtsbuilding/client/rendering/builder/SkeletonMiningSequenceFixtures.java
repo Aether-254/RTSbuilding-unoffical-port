@@ -1,8 +1,8 @@
-package com.rtsbuilding.rtsbuilding.client.rendering.builder;
+package awa.Aether_254.rtsbuilding.client.rendering.builder;
 
-import com.rtsbuilding.rtsbuilding.common.RtsUltimineCollector;
-import com.rtsbuilding.rtsbuilding.server.service.mining.RtsMiningTargetQueue;
-import com.rtsbuilding.rtsbuilding.server.service.mining.RtsMiningValidator;
+import awa.Aether_254.rtsbuilding.common.RtsUltimineCollector;
+import awa.Aether_254.rtsbuilding.server.service.mining.RtsMiningTargetQueue;
+import awa.Aether_254.rtsbuilding.server.service.mining.RtsMiningValidator;
 import net.minecraft.core.BlockPos;
 
 import java.util.ArrayDeque;

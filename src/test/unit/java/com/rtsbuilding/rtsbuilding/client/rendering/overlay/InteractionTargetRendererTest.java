@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.rendering.overlay;
+package awa.Aether_254.rtsbuilding.client.rendering.overlay;
 
 import org.junit.jupiter.api.Test;
 

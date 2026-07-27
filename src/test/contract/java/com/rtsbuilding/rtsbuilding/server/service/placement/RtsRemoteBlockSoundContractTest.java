@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.placement;
+package awa.Aether_254.rtsbuilding.server.service.placement;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class RtsRemoteBlockSoundContractTest {
     @Test
     void breakSoundUsesStateCapturedBeforeDestroy() throws IOException {
         String soundSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementSound.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementSound.java"));
         String method = methodBody(soundSource,
                 "public static void playRemoteBlockBreakSound(ServerPlayer player, ServerLevel level,");
 
@@ -28,7 +28,7 @@ class RtsRemoteBlockSoundContractTest {
     @Test
     void miningAndPlacedRecoveryPassPreBreakStateToSound() throws IOException {
         String miningSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/mining/RtsMiningStateMachine.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/mining/RtsMiningStateMachine.java"));
         String miningBody = methodBody(miningSource,
                 "public static MiningBreakResult destroyMinedBlock");
         assertTrue(miningBody.contains("BlockState beforeState = player.serverLevel().getBlockState(pos);"),
@@ -37,7 +37,7 @@ class RtsRemoteBlockSoundContractTest {
                 "普通挖掘/连锁挖掘应把破坏前状态传给相机位置声音。");
 
         String recoverySource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/RtsPlacedRecoveryService.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/RtsPlacedRecoveryService.java"));
         String recoveryBody = methodBody(recoverySource,
                 "public static void breakPlaced");
         assertTrue(recoveryBody.contains("BlockState state = level.getBlockState(targetPos);"),
@@ -49,18 +49,18 @@ class RtsRemoteBlockSoundContractTest {
     @Test
     void batchSoundsAreRelativeNonAttenuatedAndNeverQueuedAcrossTicks() throws IOException {
         String serverSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementSound.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementSound.java"));
         String clientSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/sound/RtsBlockActionSoundPlayer.java"))
+                "src/main/java/awa/Aether_254/rtsbuilding/client/sound/RtsBlockActionSoundPlayer.java"))
                 .replace("\r\n", "\n");
         String configSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/Config.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/Config.java"));
         String modSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/RtsbuildingMod.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/RtsbuildingMod.java"));
         String packetRegistry = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/network/builder/RtsBuilderPackets.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/network/builder/RtsBuilderPackets.java"));
         String dispatcher = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/network/ClientPayloadDispatcher.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/network/ClientPayloadDispatcher.java"));
 
         assertTrue(serverSource.contains("S2CRtsBlockActionSoundPayload"),
                 "服务端应发送方块音色，而不是把声音固定在可能滞后的世界坐标。");

@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task.effect;
+package awa.Aether_254.rtsbuilding.server.task.effect;
 
 import org.junit.jupiter.api.Test;
 

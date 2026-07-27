@@ -1,7 +1,7 @@
-package com.rtsbuilding.rtsbuilding.server.storage.cache;
+package awa.Aether_254.rtsbuilding.server.storage.cache;
 
-import com.rtsbuilding.rtsbuilding.compat.RefreshableSnapshotHandler;
-import com.rtsbuilding.rtsbuilding.server.service.RtsStorageTickService;
+import awa.Aether_254.rtsbuilding.compat.RefreshableSnapshotHandler;
+import awa.Aether_254.rtsbuilding.server.service.RtsStorageTickService;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;

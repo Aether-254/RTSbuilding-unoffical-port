@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task.placement;
+package awa.Aether_254.rtsbuilding.server.task.placement;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

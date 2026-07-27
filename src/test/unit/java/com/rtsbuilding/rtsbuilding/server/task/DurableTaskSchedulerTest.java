@@ -1,12 +1,12 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
-import com.rtsbuilding.rtsbuilding.server.task.identity.SubmissionId;
-import com.rtsbuilding.rtsbuilding.server.task.identity.TaskId;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.TaskCodec;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.TaskLifecycleState;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.TaskPersistenceCoordinator;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.TaskRepository;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.TaskSnapshot;
+import awa.Aether_254.rtsbuilding.server.task.identity.SubmissionId;
+import awa.Aether_254.rtsbuilding.server.task.identity.TaskId;
+import awa.Aether_254.rtsbuilding.server.task.persistence.TaskCodec;
+import awa.Aether_254.rtsbuilding.server.task.persistence.TaskLifecycleState;
+import awa.Aether_254.rtsbuilding.server.task.persistence.TaskPersistenceCoordinator;
+import awa.Aether_254.rtsbuilding.server.task.persistence.TaskRepository;
+import awa.Aether_254.rtsbuilding.server.task.persistence.TaskSnapshot;
 import net.minecraft.nbt.CompoundTag;
 import org.junit.jupiter.api.Test;
 

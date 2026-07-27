@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.transfer;
+package awa.Aether_254.rtsbuilding.server.service.transfer;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class RtsBdOnlyTransferContractTest {
     @Test
     void menuSlotImportAcceptsBeyondDimensionsOnlyStorageSessions() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/transfer/RtsTransferPlayerIntegration.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/transfer/RtsTransferPlayerIntegration.java"));
         String body = methodBody(source, "public static void importMenuSlotToLinked(ServerPlayer player, RtsStorageSession session, int menuSlot)");
 
         assertTrue(body.contains("RtsLinkedStorageResolver.hasAnyStorage(player, session)"),

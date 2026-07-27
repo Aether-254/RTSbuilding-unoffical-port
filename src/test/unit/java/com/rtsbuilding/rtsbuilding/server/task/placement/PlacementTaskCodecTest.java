@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.server.task.placement;
+package awa.Aether_254.rtsbuilding.server.task.placement;
 
-import com.rtsbuilding.rtsbuilding.server.task.PlacementTaskPayload;
+import awa.Aether_254.rtsbuilding.server.task.PlacementTaskPayload;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

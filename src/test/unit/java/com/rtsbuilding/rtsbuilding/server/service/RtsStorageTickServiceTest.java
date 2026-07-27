@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.server.service;
+package awa.Aether_254.rtsbuilding.server.service;
 
-import com.rtsbuilding.rtsbuilding.compat.RefreshableSnapshotHandler;
+import awa.Aether_254.rtsbuilding.compat.RefreshableSnapshotHandler;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.IItemHandler;
 import org.junit.jupiter.api.AfterEach;

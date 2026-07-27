@@ -1,13 +1,8 @@
 {
   "required": true,
-  "package": "com.rtsbuilding.rtsbuilding.mixin",
+  "package": "awa.Aether_254.rtsbuilding.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "BlockEntityRenderDispatcherMixin",
-    "BlockRenderDispatcherMixin",
-    "EmbeddiumWorldSliceMixin",
-    "SodiumLevelSliceMixin",
-    "RenderChunkRegionMixin",
     "LocalPlayerMixin"
   ],
   "mixins": [

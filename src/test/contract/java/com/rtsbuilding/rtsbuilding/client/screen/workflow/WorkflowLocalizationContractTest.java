@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.workflow;
+package awa.Aether_254.rtsbuilding.client.screen.workflow;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -36,12 +36,12 @@ class WorkflowLocalizationContractTest {
     @Test
     void workflowAndBindingUiDoNotRestoreChinesePlayerFacingLiterals() throws IOException {
         List<Path> sources = List.of(
-                Path.of("src/main/java/com/rtsbuilding/rtsbuilding/client/screen/workflow/RtsWorkflowPanel.java"),
-                Path.of("src/main/java/com/rtsbuilding/rtsbuilding/client/screen/workflow/RtsResumePlacementPanel.java"),
-                Path.of("src/main/java/com/rtsbuilding/rtsbuilding/client/screen/workflow/RtsBlueprintResumePanel.java"),
-                Path.of("src/main/java/com/rtsbuilding/rtsbuilding/network/builder/handler/RtsInteractionHandlers.java"),
-                Path.of("src/main/java/com/rtsbuilding/rtsbuilding/server/workflow/core/RtsWorkflowEngine.java"),
-                Path.of("src/main/java/com/rtsbuilding/rtsbuilding/server/workflow/model/RtsWorkflowStatus.java"));
+                Path.of("src/main/java/awa/Aether_254/rtsbuilding/client/screen/workflow/RtsWorkflowPanel.java"),
+                Path.of("src/main/java/awa/Aether_254/rtsbuilding/client/screen/workflow/RtsResumePlacementPanel.java"),
+                Path.of("src/main/java/awa/Aether_254/rtsbuilding/client/screen/workflow/RtsBlueprintResumePanel.java"),
+                Path.of("src/main/java/awa/Aether_254/rtsbuilding/network/builder/handler/RtsInteractionHandlers.java"),
+                Path.of("src/main/java/awa/Aether_254/rtsbuilding/server/workflow/core/RtsWorkflowEngine.java"),
+                Path.of("src/main/java/awa/Aether_254/rtsbuilding/server/workflow/model/RtsWorkflowStatus.java"));
 
         List<String> forbidden = List.of(
                 "Component.literal(\"\u6062\u590d\u653e\u7f6e\")",

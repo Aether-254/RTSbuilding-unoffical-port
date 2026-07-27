@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.performance;
+package awa.Aether_254.rtsbuilding.server.performance;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,9 +17,9 @@ class StorageDirtyRefreshContractTest {
 
     @Test
     void clientUsesEffectiveStorageTabInsteadOfTreatingBuilderScreenAsVisible() throws IOException {
-        String controller = source("com/rtsbuilding/rtsbuilding/client/controller/ClientRtsController.java");
-        String screen = source("com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
-        String bottomPanel = source("com/rtsbuilding/rtsbuilding/client/screen/panel/BottomPanel.java");
+        String controller = source("awa/Aether_254/rtsbuilding/client/controller/ClientRtsController.java");
+        String screen = source("awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+        String bottomPanel = source("awa/Aether_254/rtsbuilding/client/screen/panel/BottomPanel.java");
 
         assertTrue(controller.contains("builderScreen.isStorageViewVisible()"));
         assertTrue(screen.contains("this.bottomPanel.isStorageBrowserVisible()"));
@@ -30,7 +30,7 @@ class StorageDirtyRefreshContractTest {
 
     @Test
     void pageServiceQueuesEveryCallerInsteadOfBuildingImmediately() throws IOException {
-        String pageService = source("com/rtsbuilding/rtsbuilding/server/service/impl/RtsPageServiceImpl.java");
+        String pageService = source("awa/Aether_254/rtsbuilding/server/service/impl/RtsPageServiceImpl.java");
         assertTrue(pageService.contains("RtsStoragePageRequestCoalescer.enqueue"));
         assertTrue(pageService.contains("private void buildPageNow"));
         assertFalse(pageService.contains("public void buildPageNow"));

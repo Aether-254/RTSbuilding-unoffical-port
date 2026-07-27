@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.rendering.builder;
+package awa.Aether_254.rtsbuilding.client.rendering.builder;
 
 import net.minecraft.world.phys.Vec3;
 import org.junit.jupiter.api.Test;

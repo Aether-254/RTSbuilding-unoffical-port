@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.mining;
+package awa.Aether_254.rtsbuilding.server.service.mining;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,9 +13,9 @@ class RtsUltimineStorageBatchingContractTest {
     @Test
     void ultimineDropAbsorptionBatchesStorageWorkPerTick() throws IOException {
         String processor = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/mining/RtsUltimineProcessor.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/mining/RtsUltimineProcessor.java"));
         String absorber = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/mining/RtsDropAbsorber.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/mining/RtsDropAbsorber.java"));
 
         assertTrue(processor.contains("dropsToAbsorb")
                         && processor.contains("absorbMinedDropsBatch(player, session, dropsToAbsorb)"),
@@ -31,7 +31,7 @@ class RtsUltimineStorageBatchingContractTest {
     @Test
     void ultimineMidBatchDirtyMarkDoesNotForceSynchronousStorageRefresh() throws IOException {
         String dropAbsorber = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/mining/RtsDropAbsorber.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/mining/RtsDropAbsorber.java"));
         String drainBody = methodBody(dropAbsorber, "public static int drainDropBuffer");
 
         assertTrue(dropAbsorber.contains("RtsStorageTickService.INSTANCE.alert(player.getUUID())"),

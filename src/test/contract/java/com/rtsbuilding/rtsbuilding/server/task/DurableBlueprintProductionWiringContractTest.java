@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** 锁住蓝图新 root 的 ACK 边界、薄投影、旧数据迁移和停服 barrier。 */
 class DurableBlueprintProductionWiringContractTest {
-    private static final Path MAIN = Path.of("src/main/java/com/rtsbuilding/rtsbuilding");
+    private static final Path MAIN = Path.of("src/main/java/awa/Aether_254/rtsbuilding");
 
     @Test
     void newCommandCannotCreateWorkflowOrExecutorBeforeDurableRootAck() throws IOException {

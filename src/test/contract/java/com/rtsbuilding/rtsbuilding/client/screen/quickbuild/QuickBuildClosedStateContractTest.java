@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.quickbuild;
+package awa.Aether_254.rtsbuilding.client.screen.quickbuild;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class QuickBuildClosedStateContractTest {
     @Test
     void builderBindsShapeControllerBeforeQuickBuildTakesItsInitialSnapshot() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String constructor = methodBody(source, "public BuilderScreen");
 
         int shapeInit = constructor.indexOf("this.shapeController.init(this, this.controller)");
@@ -25,7 +25,7 @@ class QuickBuildClosedStateContractTest {
     @Test
     void closingQuickBuildPanelRestoresSingleBlockCursor() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/quickbuild/QuickBuildPanel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/quickbuild/QuickBuildPanel.java"));
         String closeBody = methodBody(source, "protected void onClose");
 
         assertTrue(closeBody.contains("restoreSingleBlockCursor()"),
@@ -37,7 +37,7 @@ class QuickBuildClosedStateContractTest {
     @Test
     void storedQuickBuildStateDoesNotActivateWhenWindowIsClosed() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "public void syncQuickBuildActiveState");
 
         assertTrue(body.contains("if (!this.quickBuildPanel.isOpen() || !canUseQuickBuild())"),
@@ -50,16 +50,16 @@ class QuickBuildClosedStateContractTest {
     @Test
     void quickBuildClientUiRequiresRemotePlacementUnlock() throws IOException {
         String builderScreen = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String canUseBody = methodBody(builderScreen, "public boolean canUseQuickBuild");
         String toggleBody = methodBody(builderScreen, "public void toggleQuickBuild");
         String panelSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/quickbuild/QuickBuildPanel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/quickbuild/QuickBuildPanel.java"));
         String canShowBody = methodBody(panelSource, "protected boolean canShowWindow");
         String topBarSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/topbar/TopBarPanel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/topbar/TopBarPanel.java"));
         String topBarAdapterSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/topbar/TopBarUiAdapter.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/topbar/TopBarUiAdapter.java"));
 
         assertTrue(canUseBody.contains("!this.controller.isProgressionEnabled()"),
                 "survival balance disabled should keep quick-build available");
@@ -82,11 +82,11 @@ class QuickBuildClosedStateContractTest {
     @Test
     void quickBuildPanelOwnsShapeDimensionReadout() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/quickbuild/QuickBuildPanel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/quickbuild/QuickBuildPanel.java"));
         String adapter = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/quickbuild/QuickBuildUiAdapter.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/quickbuild/QuickBuildUiAdapter.java"));
         String layout = Files.readString(Path.of(
-                "src/uiKit/java/com/rtsbuilding/rtsbuilding/uikit/layout/QuickBuildWindowLayout.java"));
+                "src/uiKit/java/awa/Aether_254/rtsbuilding/uikit/layout/QuickBuildWindowLayout.java"));
 
         assertTrue(source.contains("screen.rtsbuilding.quick_build.dimensions"),
                 "shape dimensions should live in the quick-build panel, not the top bar");
@@ -101,7 +101,7 @@ class QuickBuildClosedStateContractTest {
     @Test
     void lockedRemotePlacementShowsActionbarHintOnServerFallback() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementBatch.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementBatch.java"));
 
         assertTrue(source.contains("RtsFeature.REMOTE_PLACE"),
                 "server placement fallback must still be gated by remote placement");

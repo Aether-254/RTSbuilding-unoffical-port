@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.service;
+package awa.Aether_254.rtsbuilding.client.service;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class RtsCameraSmoothRotationContractTest {
     @Test
     void smoothRotationKeepsHighFrequencyInputInsteadOfStoppingAtTheLegacyTickCap() throws IOException {
         String clientSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/service/CameraOrbitService.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/service/CameraOrbitService.java"));
 
         assertTrue(clientSource.contains("MAX_SMOOTH_ROTATE_ACCUMULATION = 160.0F"),
                 "平滑旋转必须允许一个 tick 汇总多次高频鼠标事件。");
@@ -26,7 +26,7 @@ class RtsCameraSmoothRotationContractTest {
     @Test
     void mouseRotationUsesDirectTargetsWithoutReleaseInertia() throws IOException {
         String clientSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/service/CameraOrbitService.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/service/CameraOrbitService.java"));
 
         assertTrue(clientSource.contains("applyImmediateRotation((float) dragX, (float) dragY);"),
                 "每个鼠标拖拽事件都应立即更新目标朝向。");
@@ -39,9 +39,9 @@ class RtsCameraSmoothRotationContractTest {
     @Test
     void visualCameraAdvancesOnceBeforeEachRenderedFrame() throws IOException {
         String renderSyncSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/camera/RtsCameraRenderSync.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/camera/RtsCameraRenderSync.java"));
         String controllerSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/controller/ClientRtsController.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/controller/ClientRtsController.java"));
 
         assertTrue(renderSyncSource.contains("RenderFrameEvent.Pre"),
                 "视觉镜头必须在 GameRenderer 开始本帧之前更新。");
@@ -58,7 +58,7 @@ class RtsCameraSmoothRotationContractTest {
     @Test
     void serverAcceptsTheSameBoundedSmoothRotationTotalAsTheClient() throws IOException {
         String serverSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/camera/RtsCameraManager.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/camera/RtsCameraManager.java"));
 
         assertTrue(serverSource.contains("ROT_INPUT_CLAMP = 160.0F"),
                 "服务端旋转上限必须接纳客户端一个 tick 内的有界汇总，否则仍会出现姿态分叉。");

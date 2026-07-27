@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.data;
+package awa.Aether_254.rtsbuilding.server.data;
 
 import net.minecraft.nbt.CompoundTag;
 import org.junit.jupiter.api.AfterEach;

@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task.effect;
+package awa.Aether_254.rtsbuilding.server.task.effect;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /** 锁住候选 C 的生产接线，避免普通热路径重新绕开副作用屏障。 */
 class RtsEffectProductionWiringContractTest {
-    private static final Path MAIN = Path.of("src/main/java/com/rtsbuilding/rtsbuilding");
+    private static final Path MAIN = Path.of("src/main/java/awa/Aether_254/rtsbuilding");
 
     @Test
     void accumulatorOwnsTypedLedgerAndBarrierWithoutLegacyDrainQueue() throws IOException {

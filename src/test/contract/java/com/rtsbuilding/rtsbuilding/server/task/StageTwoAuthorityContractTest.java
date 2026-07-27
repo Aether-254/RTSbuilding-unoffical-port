@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -78,7 +78,7 @@ class StageTwoAuthorityContractTest {
     }
 
     private static String source(String relative) throws IOException {
-        return Files.readString(Path.of("src/main/java/com/rtsbuilding/rtsbuilding").resolve(relative));
+        return Files.readString(Path.of("src/main/java/awa/Aether_254/rtsbuilding").resolve(relative));
     }
 
     private static String between(String source, String start, String end) {

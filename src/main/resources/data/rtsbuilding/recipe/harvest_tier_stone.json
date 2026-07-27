@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "tools",
   "key": {
-    "C": {"tag": "c:ingots/copper"},
-    "P": {"item": "minecraft:wooden_pickaxe"},
-    "R": {"tag": "c:dusts/redstone"}
+    "C": "#c:ingots/copper",
+    "P": "minecraft:wooden_pickaxe",
+    "R": "#c:dusts/redstone"
   },
   "pattern": [
     " C ",

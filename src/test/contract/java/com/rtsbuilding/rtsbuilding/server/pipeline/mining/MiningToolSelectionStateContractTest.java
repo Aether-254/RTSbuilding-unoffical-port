@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.pipeline.mining;
+package awa.Aether_254.rtsbuilding.server.pipeline.mining;
 
 import org.junit.jupiter.api.Test;
 
@@ -39,6 +39,6 @@ class MiningToolSelectionStateContractTest {
 
     private static String source(String name) throws IOException {
         return Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/pipeline/mining", name));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/pipeline/mining", name));
     }
 }

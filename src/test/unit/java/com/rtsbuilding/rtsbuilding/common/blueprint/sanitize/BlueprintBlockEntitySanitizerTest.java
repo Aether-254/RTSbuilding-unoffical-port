@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.common.blueprint.sanitize;
+package awa.Aether_254.rtsbuilding.common.blueprint.sanitize;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;

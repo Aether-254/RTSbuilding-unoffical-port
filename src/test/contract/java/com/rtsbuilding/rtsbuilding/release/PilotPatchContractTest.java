@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.release;
+package awa.Aether_254.rtsbuilding.release;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,9 +13,9 @@ class PilotPatchContractTest {
     void pilotVersionKeepsPatch4ClientDefaultsAndLocalizedCameraHint() throws Exception {
         String properties = Files.readString(Path.of("gradle.properties"));
         String config = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/Config.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/Config.java"));
         String camera = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/camera/RtsCameraManager.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/camera/RtsCameraManager.java"));
         String zhCn = Files.readString(Path.of(
                 "src/main/resources/assets/rtsbuilding/lang/zh_cn.json"));
 

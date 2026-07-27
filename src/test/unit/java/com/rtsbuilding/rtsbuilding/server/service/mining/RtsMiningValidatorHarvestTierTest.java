@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.mining;
+package awa.Aether_254.rtsbuilding.server.service.mining;
 
 import org.junit.jupiter.api.Test;
 

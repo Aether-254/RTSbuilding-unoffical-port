@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.standalone;
+package awa.Aether_254.rtsbuilding.client.screen.standalone;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class AdvancedShapeHandleInputContractTest {
     @Test
     void advancedShapeHandleClickIsConsumedBeforeMiningOrPlacement() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "private boolean handleWorldClickActions");
 
         int handleClick = body.indexOf("handleAdvancedShapeHandleClick(mouseX, mouseY, button)");
@@ -29,7 +29,7 @@ class AdvancedShapeHandleInputContractTest {
     @Test
     void advancedShapeHandleClickUsesWorldHandleRaycast() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "private boolean handleAdvancedShapeHandleClick");
 
         assertTrue(body.contains("button != GLFW.GLFW_MOUSE_BUTTON_LEFT"));

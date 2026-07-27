@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task.identity;
+package awa.Aether_254.rtsbuilding.server.task.identity;
 
 import org.junit.jupiter.api.Test;
 

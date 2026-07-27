@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.client.rendering.builder;
+package awa.Aether_254.rtsbuilding.client.rendering.builder;
 
-import com.rtsbuilding.rtsbuilding.client.screen.shape.ShapeDataRecords;
+import awa.Aether_254.rtsbuilding.client.screen.shape.ShapeDataRecords;
 import net.minecraft.core.BlockPos;
 
 import java.lang.reflect.Method;

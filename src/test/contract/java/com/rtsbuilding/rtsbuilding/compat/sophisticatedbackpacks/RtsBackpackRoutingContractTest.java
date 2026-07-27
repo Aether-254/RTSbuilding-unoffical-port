@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.compat.sophisticatedbackpacks;
+package awa.Aether_254.rtsbuilding.compat.sophisticatedbackpacks;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +12,13 @@ class RtsBackpackRoutingContractTest {
     @Test
     void carriedBackpackKeepsUuidBindingAndPlacementNeverFallsBackToOpen() throws Exception {
         String compat = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/compat/sophisticatedbackpacks/RtsBackpackCompat.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/compat/sophisticatedbackpacks/RtsBackpackCompat.java"));
         String screen = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String placement = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementExecutor.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementExecutor.java"));
         String lifecycle = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/resolver/RtsLinkedStorageBlockEventHandler.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/resolver/RtsLinkedStorageBlockEventHandler.java"));
 
         assertTrue(compat.contains("PlayerInventoryProvider$BackpackInventorySlotConsumer")
                         && compat.contains("findCarriedBackpack(player, uuid)"),

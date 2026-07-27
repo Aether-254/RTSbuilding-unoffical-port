@@ -1,8 +1,8 @@
-package com.rtsbuilding.rtsbuilding.common.shape.generator;
+package awa.Aether_254.rtsbuilding.common.shape.generator;
 
-import com.rtsbuilding.rtsbuilding.common.shape.model.AreaShape;
-import com.rtsbuilding.rtsbuilding.common.shape.model.AreaShapeInput;
-import com.rtsbuilding.rtsbuilding.common.shape.model.ShapeFillMode;
+import awa.Aether_254.rtsbuilding.common.shape.model.AreaShape;
+import awa.Aether_254.rtsbuilding.common.shape.model.AreaShapeInput;
+import awa.Aether_254.rtsbuilding.common.shape.model.ShapeFillMode;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import org.junit.jupiter.api.Test;

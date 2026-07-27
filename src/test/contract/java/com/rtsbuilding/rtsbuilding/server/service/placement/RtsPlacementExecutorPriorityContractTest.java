@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.placement;
+package awa.Aether_254.rtsbuilding.server.service.placement;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class RtsPlacementExecutorPriorityContractTest {
     @Test
     void shiftMainHandPlacementFallsBackToNormalInteraction() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementExecutor.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementExecutor.java"));
         String body = methodBody(source, "private static boolean placeWithMainHand");
 
         int forceFallback = body.indexOf("if (forcePlace) {", body.indexOf("mainHandUseFallback"));
@@ -29,7 +29,7 @@ class RtsPlacementExecutorPriorityContractTest {
     @Test
     void shiftStoragePlacementFallsBackToNormalInteractionWithRemainder() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementExecutor.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementExecutor.java"));
         String body = methodBody(source, "private static boolean placeWithStorageItem");
 
         int firstFallback = body.indexOf(

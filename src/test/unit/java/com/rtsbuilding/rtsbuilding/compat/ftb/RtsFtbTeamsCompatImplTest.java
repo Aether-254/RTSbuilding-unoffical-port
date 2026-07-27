@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.compat.ftb;
+package awa.Aether_254.rtsbuilding.compat.ftb;
 
 import net.minecraft.network.chat.Component;
 import org.junit.jupiter.api.Test;

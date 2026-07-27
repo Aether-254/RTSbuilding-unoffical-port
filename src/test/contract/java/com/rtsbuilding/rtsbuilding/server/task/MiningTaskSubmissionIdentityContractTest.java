@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,14 +14,14 @@ class MiningTaskSubmissionIdentityContractTest {
     @Test
     void newMiningOperationDoesNotReuseHistoricalWorkflowIdAsTaskIdentity() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/task/RtsTaskEngine.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/task/RtsTaskEngine.java"));
         assertFreshSubmission(methodBody(source, "private boolean submitMiningState("), "挖掘");
     }
 
     @Test
     void newPlacementAndDestructionDoNotReuseHistoricalWorkflowIds() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/task/RtsTaskEngine.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/task/RtsTaskEngine.java"));
 
         assertFreshSubmission(methodBody(source, "public boolean submitPlacementJob("), "放置");
         assertFreshSubmission(methodBody(source, "public boolean submitDestructionJob("), "破坏");

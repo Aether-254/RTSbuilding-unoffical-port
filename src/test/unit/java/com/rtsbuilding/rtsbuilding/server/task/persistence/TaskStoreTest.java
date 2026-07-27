@@ -1,8 +1,8 @@
-package com.rtsbuilding.rtsbuilding.server.task.persistence;
+package awa.Aether_254.rtsbuilding.server.task.persistence;
 
-import com.rtsbuilding.rtsbuilding.server.task.TaskType;
-import com.rtsbuilding.rtsbuilding.server.task.identity.SubmissionId;
-import com.rtsbuilding.rtsbuilding.server.task.identity.TaskId;
+import awa.Aether_254.rtsbuilding.server.task.TaskType;
+import awa.Aether_254.rtsbuilding.server.task.identity.SubmissionId;
+import awa.Aether_254.rtsbuilding.server.task.identity.TaskId;
 import net.minecraft.nbt.CompoundTag;
 import org.junit.jupiter.api.Test;
 

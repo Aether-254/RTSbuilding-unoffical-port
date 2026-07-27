@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.culling;
+package awa.Aether_254.rtsbuilding.client.screen.culling;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,11 +13,11 @@ class RtsCullingRoutingContractTest {
     @Test
     void embeddiumCullingUsesItsAreaRebuildEntryWithoutBecomingARequiredDependency() throws IOException {
         String state = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/culling/RtsCullingClientState.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/culling/RtsCullingClientState.java"));
         String manager = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/culling/RtsCullingManager.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/culling/RtsCullingManager.java"));
         String invalidator = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/culling/RtsCullingRenderInvalidator.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/culling/RtsCullingRenderInvalidator.java"));
 
         assertTrue(state.contains("volatile RtsCullingManager activeManager"),
                 "Embeddium worker threads must see the active culling manager");
@@ -32,10 +32,10 @@ class RtsCullingRoutingContractTest {
     @Test
     void sodium0613UsesLevelSliceAndItsOwnAreaRebuildEntry() throws IOException {
         String mixin = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/mixin/SodiumLevelSliceMixin.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/mixin/SodiumLevelSliceMixin.java"));
         String config = Files.readString(Path.of("src/main/resources/rtsbuilding.mixins.json"));
         String invalidator = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/culling/RtsCullingRenderInvalidator.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/culling/RtsCullingRenderInvalidator.java"));
 
         assertTrue(mixin.contains("net.caffeinemc.mods.sodium.client.world.LevelSlice"));
         assertTrue(mixin.contains("getBlockState(III)"));
@@ -49,7 +49,7 @@ class RtsCullingRoutingContractTest {
     @Test
     void builderScreenRangeCullingWorldActionDelegatesToDedicatedInput() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "private boolean handleRangeCullingWorldAction");
 
         assertTrue(body.contains("RtsCullingWorldInput.handleWorldAction(this.cullingManager, this.cursorPicker)"));
@@ -60,7 +60,7 @@ class RtsCullingRoutingContractTest {
     @Test
     void screenCursorPickerCullingAwareContractUsesNormalBlockHit() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/handler/ScreenCursorPicker.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/handler/ScreenCursorPicker.java"));
         String body = methodBody(source, "public BlockHitResult pickCullingAwareBlockHit");
 
         assertTrue(body.contains("return pickBlockHit(false);"));
@@ -70,7 +70,7 @@ class RtsCullingRoutingContractTest {
     @Test
     void yellowInteractionTargetUsesCullingAwareRaycast() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/overlay/InteractionTargetRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/overlay/InteractionTargetRenderer.java"));
 
         assertTrue(source.contains("raycastBlockFromCursorThroughCulling"),
                 "yellow interaction target must use the culling-aware raycast");
@@ -80,7 +80,7 @@ class RtsCullingRoutingContractTest {
     @Test
     void cullingModeOnlySwallowsLeftDragSoRightDragCanRotateCamera() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "public boolean mouseDragged");
 
         assertTrue(body.contains("this.cullingManager.isManagementMode() && button == GLFW.GLFW_MOUSE_BUTTON_LEFT"),
@@ -90,7 +90,7 @@ class RtsCullingRoutingContractTest {
     @Test
     void activeBoxHandleDragRoutesBeforeCullingDragSwallow() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         String body = methodBody(source, "public boolean mouseDragged");
 
         int handleDrag = body.indexOf("handleBoxHandleDrag(button, dragX, dragY)");
@@ -104,9 +104,9 @@ class RtsCullingRoutingContractTest {
     @Test
     void cullingPanelCloseButtonClosesManagementMode() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/culling/RtsCullingPanel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/culling/RtsCullingPanel.java"));
         String adapter = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/culling/CullingUiAdapter.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/culling/CullingUiAdapter.java"));
         String constructor = methodBody(source, "public RtsCullingPanel");
         String closeBody = methodBody(source, "protected void onClose");
 
@@ -120,7 +120,7 @@ class RtsCullingRoutingContractTest {
     @Test
     void placementPacketsRevealLikelyCulledPlacementPositions() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/network/RtsClientPacketGateway.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/network/RtsClientPacketGateway.java"));
 
         assertTrue(source.contains("RtsCullingClientState.revealLikelyPlacement(hit.getBlockPos(), hit.getDirection())"),
                 "client placement packets should reveal likely placement positions inside culling boxes");
@@ -129,9 +129,9 @@ class RtsCullingRoutingContractTest {
     @Test
     void selectedCullingBoxRendersWorldAxisHandles() throws IOException {
         String renderer = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/culling/RtsCullingRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/culling/RtsCullingRenderer.java"));
         String handles = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/selection/RtsBoxHandleRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/selection/RtsBoxHandleRenderer.java"));
 
         assertTrue(renderer.contains("RtsBoxHandleRenderer.renderAxisHandles"),
                 "selected range-culling boxes should use the shared world-space axis handle renderer");
@@ -148,9 +148,9 @@ class RtsCullingRoutingContractTest {
     @Test
     void selectedCullingBoxAxisHandlesRenderWithoutDepthTesting() throws IOException {
         String overlay = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/RtsVisualOverlayRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/RtsVisualOverlayRenderer.java"));
         String renderer = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/culling/RtsCullingRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/culling/RtsCullingRenderer.java"));
 
         assertTrue(overlay.contains("CULLING_HANDLE_NO_DEPTH_FILL"),
                 "range-culling axis handle fill should have a dedicated no-depth render type");
@@ -165,11 +165,11 @@ class RtsCullingRoutingContractTest {
     @Test
     void blueprintCaptureUsesSharedAnimatedBoxAndHandleRenderer() throws IOException {
         String renderer = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/blueprint/BlueprintCaptureRenderer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/blueprint/BlueprintCaptureRenderer.java"));
         String panel = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/blueprint/BlueprintPanel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/blueprint/BlueprintPanel.java"));
         String controller = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/blueprint/BlueprintCaptureController.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/blueprint/BlueprintCaptureController.java"));
 
         assertTrue(renderer.contains("BlueprintPanel.getCapturePreviewAabbForRender()"),
                 "blueprint capture outline should render from the animated AABB path");

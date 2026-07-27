@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.rendering.builder;
+package awa.Aether_254.rtsbuilding.client.rendering.builder;
 
 /**
  * Normalized integer edge segment for skeleton geometry assertions.

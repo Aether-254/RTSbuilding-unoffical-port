@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.handler;
+package awa.Aether_254.rtsbuilding.client.screen.handler;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class ShapePlacementContextContractTest {
     @Test
     void shapePlacementFilteringUsesBlockPlaceContextForReplaceableBlocks() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/handler/ScreenShapeController.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/handler/ScreenShapeController.java"));
 
         assertTrue(source.contains("private BlockPlaceContext createShapePlacementContext"),
                 "形状放置过滤需要构造 BlockPlaceContext，不能只用无上下文 canBeReplaced。");
@@ -25,9 +25,9 @@ class ShapePlacementContextContractTest {
     @Test
     void creativePlacementKeepsInfiniteClientAndServerMaterialPaths() throws IOException {
         String clientSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/service/BuildPlacementService.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/service/BuildPlacementService.java"));
         String quickBuildSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementQuickBuild.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementQuickBuild.java"));
 
         assertTrue(clientSource.contains("if (isLocalPlayerCreative) return Long.MAX_VALUE;"),
                 "客户端快速放置数量判断中，创造模式应视为无限材料。");

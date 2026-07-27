@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.bootstrap;
+package awa.Aether_254.rtsbuilding.client.bootstrap;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import net.neoforged.neoforge.client.settings.KeyConflictContext;

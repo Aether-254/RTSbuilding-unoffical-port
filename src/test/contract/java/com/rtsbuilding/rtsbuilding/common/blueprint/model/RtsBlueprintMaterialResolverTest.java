@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.common.blueprint.model;
+package awa.Aether_254.rtsbuilding.common.blueprint.model;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ class RtsBlueprintMaterialResolverTest {
     @Test
     void materialResolutionDoesNotTrustImportedMaterialItemOrBlockEntityNbt() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/common/blueprint/model/RtsBlueprint.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/common/blueprint/model/RtsBlueprint.java"));
         String body = methodBody(source, "public static List<ResourceLocation> materialItemIds(RtsBlueprintBlock block)");
 
         assertTrue(body.contains("BlueprintMaterialResolver.materialItemIds(block.state())"),
@@ -29,7 +29,7 @@ class RtsBlueprintMaterialResolverTest {
     @Test
     void materialResolverKeepsExplicitFallbacksForKnownVanillaBlocks() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/common/blueprint/material/BlueprintMaterialResolver.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/common/blueprint/material/BlueprintMaterialResolver.java"));
 
         assertTrue(source.contains("Blocks.FARMLAND") && source.contains("Items.DIRT"),
                 "Farmland should still cost dirt after removing imported material overrides.");

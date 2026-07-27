@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task.mining;
+package awa.Aether_254.rtsbuilding.server.task.mining;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

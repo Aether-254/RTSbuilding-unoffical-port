@@ -2,9 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "tools",
   "key": {
-    "D": {"tag": "c:gems/diamond"},
-    "P": {"item": "rtsbuilding:harvest_tier_iron"},
-    "R": {"tag": "c:dusts/redstone"}
+    "D": "#c:gems/diamond",
+    "P": "rtsbuilding:harvest_tier_iron",
+    "R": "#c:dusts/redstone"
   },
   "pattern": [
     " D ",

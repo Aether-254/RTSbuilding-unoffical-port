@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.layout;
+package awa.Aether_254.rtsbuilding.client.screen.layout;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.standalone;
+package awa.Aether_254.rtsbuilding.client.screen.standalone;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,11 +12,11 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void wheelSelectionUpdatesTheStateReadByTopBarActiveStyle() throws IOException {
         String screen = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
         String topBar = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/topbar/TopBarPanel.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/topbar/TopBarPanel.java");
         String topBarAdapter = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/topbar/TopBarUiAdapter.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/topbar/TopBarUiAdapter.java");
 
         String selection = methodBody(screen, "private void selectModeFromWheel(BuilderMode mode)");
         assertTrue(selection.contains("this.controller.setMode(mode)"),
@@ -34,7 +34,7 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void altWheelUsesOneStableTickEdgeInsteadOfThreeCompetingInputPaths() throws IOException {
         String screen = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
         String altState = methodBody(screen, "private void updateModeWheelAltState()");
         String tick = methodBody(screen, "public void tick()");
         String keyPressed = methodBody(
@@ -56,9 +56,9 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void linkAndRotateActionsKeepTheRightDragCameraArbitration() throws IOException {
         String screen = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
         String cameraInput = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/input/CameraInputHandler.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/input/CameraInputHandler.java");
         String mouseDown = methodBody(
                 screen,
                 "private boolean handleWorldClickActions(double mouseX, double mouseY, int button)");
@@ -79,7 +79,7 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void closingDuringTemporaryFunnelRestoresPreviousMode() throws IOException {
         String screen = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
         String onClose = methodBody(screen, "public void onClose()");
 
         int restore = onClose.indexOf("this.controller.setMode(this.modeBeforeFunnelHotkey)");
@@ -91,7 +91,7 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void funnelUsesRightMouseAndFAsIndependentHoldSources() throws IOException {
         String screen = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
         String mouseDown = methodBody(
                 screen,
                 "private boolean handleWorldClickActions(double mouseX, double mouseY, int button)");
@@ -111,9 +111,9 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void placedBlockRotationUsesWorldArcsAndSubmitsOneStepIntent() throws IOException {
         String screen = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
         String handles = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/mode/PlacedBlockRotationHandles.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/mode/PlacedBlockRotationHandles.java");
         String leftClick = methodBody(
                 screen,
                 "private boolean handleLeftClickInteractions(double mouseX, double mouseY, int button)");
@@ -132,9 +132,9 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void placedBlockRotationHandlesRenderInWorldWithoutBlockingCameraDrag() throws IOException {
         String renderer = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/rendering/selection/PlacedBlockRotationHandleRenderer.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/rendering/selection/PlacedBlockRotationHandleRenderer.java");
         String cameraInput = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/input/CameraInputHandler.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/input/CameraInputHandler.java");
 
         assertTrue(renderer.contains("RenderingUtil.quad("));
         assertTrue(renderer.contains("renderArc("));
@@ -146,7 +146,7 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void rotationKeyboardTrackRunsAfterCameraAndSelectionPriority() throws IOException {
         String screen = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
         String worldKeys = methodBody(
                 screen,
                 "private boolean handleWorldInteractionKeys(int keyCode, int scanCode, int modifiers)");
@@ -165,7 +165,7 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void hoveredPinBindingGetsPriorityOverWorldKeyConflicts() throws IOException {
         String screen = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java");
         String keyPressed = methodBody(
                 screen, "public boolean keyPressed(int keyCode, int scanCode, int modifiers)");
 
@@ -177,9 +177,9 @@ class RtsModeWheelRoutingContractTest {
     @Test
     void altModeWheelUsesModernVectorNodesAndProgressiveOpening() throws IOException {
         String wheel = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/mode/BuilderModeWheel.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/mode/BuilderModeWheel.java");
         String vectorRenderer = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/util/RtsGuiVectorRenderer.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/client/util/RtsGuiVectorRenderer.java");
 
         assertTrue(wheel.contains("OPEN_DURATION_MS = 175L"));
         assertTrue(wheel.contains("animationProgress("));

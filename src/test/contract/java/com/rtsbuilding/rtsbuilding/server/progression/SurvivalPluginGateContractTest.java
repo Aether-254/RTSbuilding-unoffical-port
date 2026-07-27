@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.progression;
+package awa.Aether_254.rtsbuilding.server.progression;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class SurvivalPluginGateContractTest {
     @Test
     void areaMiningAndChainMiningUseIndependentServerGates() throws Exception {
         String registration = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/pipeline/core/RtsPipelineRegistration.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/pipeline/core/RtsPipelineRegistration.java"));
         String areaMethod = methodBody(registration, "private static void registerAreaMine");
 
         assertTrue(areaMethod.contains("ProgressionGatePipe(RtsFeature.AREA_MINE)"));
@@ -22,7 +22,7 @@ class SurvivalPluginGateContractTest {
     @Test
     void everyPlacementEntryChecksItsPluginBeforeCreatingAWorkflow() throws Exception {
         String registration = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/pipeline/core/RtsPipelineRegistration.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/pipeline/core/RtsPipelineRegistration.java"));
 
         assertGateBeforeWorkflow(registration, "private static void registerPlaceSingle");
         assertGateBeforeWorkflow(registration, "private static void registerPlaceBatch");
@@ -32,9 +32,9 @@ class SurvivalPluginGateContractTest {
     @Test
     void survivalToggleResynchronizesPluginsAndRejectedActionsExplainWhy() throws Exception {
         String handler = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/network/progression/handler/RtsProgressionNetworkHandlers.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/network/progression/handler/RtsProgressionNetworkHandlers.java"));
         String gate = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/pipeline/validation/ProgressionGatePipe.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/pipeline/validation/ProgressionGatePipe.java"));
 
         assertTrue(handler.contains("RtsPluginService.syncToPlayer(player)"));
         assertTrue(gate.contains("message.rtsbuilding.plugin_required"));

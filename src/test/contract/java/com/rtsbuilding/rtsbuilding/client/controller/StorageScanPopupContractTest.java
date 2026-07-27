@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.controller;
+package awa.Aether_254.rtsbuilding.client.controller;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +12,9 @@ class StorageScanPopupContractTest {
     @Test
     void disabledStorageReadyPopupClearsAndSuppressesLongRunningScanUiState() throws IOException {
         String storageState = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/controller/StorageStateManager.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/controller/StorageStateManager.java"));
         String builderScreen = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
 
         assertTrue(storageState.contains("if (!RtsClientUiStateStore.isShowStorageReadyPopupEnabled())")
                         && storageState.contains("clearStorageScanState();"),

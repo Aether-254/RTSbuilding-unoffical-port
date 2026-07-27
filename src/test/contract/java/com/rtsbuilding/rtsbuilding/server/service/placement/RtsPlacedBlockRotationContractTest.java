@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.placement;
+package awa.Aether_254.rtsbuilding.server.service.placement;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,13 +12,13 @@ class RtsPlacedBlockRotationContractTest {
     @Test
     void worldArcPayloadCarriesOnlyPositionAxisAndOneStepIntent() throws Exception {
         String payload = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/network/builder/C2SRtsOrientBlockPayload.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/network/builder/C2SRtsOrientBlockPayload.java");
         String handler = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/network/builder/handler/RtsPlaceHandlers.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/network/builder/handler/RtsPlaceHandlers.java");
         String helper = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementHelper.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementHelper.java");
         String rotationStep = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/common/placement/PlacedBlockRotationStep.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/common/placement/PlacedBlockRotationStep.java");
 
         assertTrue(payload.contains("byte axisDirection"));
         assertTrue(payload.contains("byte quarterTurns"));
@@ -41,11 +41,11 @@ class RtsPlacedBlockRotationContractTest {
     @Test
     void applicationRejectsUnsafeOrUnloadedStatesAndRevalidatesNeighbors() throws Exception {
         String rotation = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacedBlockRotation.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacedBlockRotation.java");
         String implementation = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/impl/RtsPlacementServiceImpl.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/impl/RtsPlacementServiceImpl.java");
         String handler = source(
-                "src/main/java/com/rtsbuilding/rtsbuilding/network/builder/handler/RtsPlaceHandlers.java");
+                "src/main/java/awa/Aether_254/rtsbuilding/network/builder/handler/RtsPlaceHandlers.java");
 
         assertTrue(handler.contains("context.enqueueWork("));
         assertTrue(handler.contains(
@@ -53,7 +53,7 @@ class RtsPlacedBlockRotationContractTest {
                 "旧顺时针接口应保持单一位置载荷，不再携带废弃的属性选择");
         assertTrue(implementation.contains("RtsProgressionManager.canUse(player, RtsFeature.ROTATE_BLOCK)"));
         assertTrue(implementation.contains("registry.session().getIfPresent(player)"));
-        assertTrue(implementation.contains("session.mode != com.rtsbuilding.rtsbuilding.common.build.BuilderMode.ROTATE"));
+        assertTrue(implementation.contains("session.mode != awa.Aether_254.rtsbuilding.common.build.BuilderMode.ROTATE"));
         assertTrue(implementation.contains("player.isSpectator()"));
         assertTrue(implementation.contains("!player.mayBuild()"));
         assertTrue(implementation.contains("RtsLinkedStorageResolver.canAccessWorldTarget(player, pos)"));

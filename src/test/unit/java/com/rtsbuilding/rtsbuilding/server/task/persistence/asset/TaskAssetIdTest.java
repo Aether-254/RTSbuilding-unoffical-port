@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.server.task.persistence.asset;
+package awa.Aether_254.rtsbuilding.server.task.persistence.asset;
 
-import com.rtsbuilding.rtsbuilding.server.task.identity.TaskId;
+import awa.Aether_254.rtsbuilding.server.task.identity.TaskId;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

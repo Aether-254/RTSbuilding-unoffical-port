@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.gear;
+package awa.Aether_254.rtsbuilding.client.screen.gear;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,9 +13,9 @@ class RtsSoundSettingsContractTest {
     @Test
     void gearMenuOwnsTheSoundSectionAndItsThreePlayerControls() throws IOException {
         String gear = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/gear/GearMenuPanel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/gear/GearMenuPanel.java"));
         String store = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/common/persist/RtsClientUiStateStore.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/common/persist/RtsClientUiStateStore.java"));
 
         int soundSection = gear.indexOf("screen.rtsbuilding.settings.category.sound");
         int hurtSound = gear.indexOf("screen.rtsbuilding.settings.damage_sound", soundSection);
@@ -34,11 +34,11 @@ class RtsSoundSettingsContractTest {
     @Test
     void runtimeFiltersSoundsImmediatelyWithoutAddingAnotherQueue() throws IOException {
         String player = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/sound/RtsBlockActionSoundPlayer.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/sound/RtsBlockActionSoundPlayer.java"));
         String payload = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/network/builder/S2CRtsBlockActionSoundPayload.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/network/builder/S2CRtsBlockActionSoundPayload.java"));
         String controller = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/controller/ClientRtsController.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/controller/ClientRtsController.java"));
 
         assertTrue(player.contains("isRtsSoundsEnabled()"));
         assertTrue(player.contains("payload.breakAction()")

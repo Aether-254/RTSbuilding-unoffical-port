@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.client.screen.handler;
+package awa.Aether_254.rtsbuilding.client.screen.handler;
 
-import com.rtsbuilding.rtsbuilding.common.shape.model.ShapeFillMode;
+import awa.Aether_254.rtsbuilding.common.shape.model.ShapeFillMode;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,9 +1,9 @@
-package com.rtsbuilding.rtsbuilding.server.service;
+package awa.Aether_254.rtsbuilding.server.service;
 
-import com.rtsbuilding.rtsbuilding.server.task.RtsTaskEngine;
-import com.rtsbuilding.rtsbuilding.server.task.TaskScheduler;
-import com.rtsbuilding.rtsbuilding.server.task.TaskType;
-import com.rtsbuilding.rtsbuilding.server.task.effect.RtsEffectCommitBarrier;
+import awa.Aether_254.rtsbuilding.server.task.RtsTaskEngine;
+import awa.Aether_254.rtsbuilding.server.task.TaskScheduler;
+import awa.Aether_254.rtsbuilding.server.task.TaskType;
+import awa.Aether_254.rtsbuilding.server.task.effect.RtsEffectCommitBarrier;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;

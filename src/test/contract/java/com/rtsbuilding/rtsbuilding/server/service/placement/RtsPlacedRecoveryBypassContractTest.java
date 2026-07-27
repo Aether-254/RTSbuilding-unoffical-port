@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.placement;
+package awa.Aether_254.rtsbuilding.server.service.placement;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class RtsPlacedRecoveryBypassContractTest {
     @Test
     void trackedRecoveryBypassesHarvestChecksWithoutWeakeningCleanClaims() throws Exception {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/RtsPlacedRecoveryService.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/RtsPlacedRecoveryService.java"));
 
         assertTrue(source.contains("getCloneItemStack(level, pos, state)"));
         assertTrue(source.contains("CommonHooks.fireBlockBreak("));
@@ -29,7 +29,7 @@ class RtsPlacedRecoveryBypassContractTest {
         assertFalse(source.contains("stacks.addLast(recoveredBlock.copy())"));
 
         String trackingSource = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/tracking/RtsBlockTrackingEvents.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/tracking/RtsBlockTrackingEvents.java"));
         assertTrue(trackingSource.contains("@SubscribeEvent(priority = EventPriority.LOWEST)"));
         assertTrue(trackingSource.contains("if (event.isCanceled())"));
     }

@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.storage.cache;
+package awa.Aether_254.rtsbuilding.server.storage.cache;
 
 import org.junit.jupiter.api.Test;
 
@@ -71,6 +71,6 @@ class StorageHandlerLifecycleContractTest {
     }
 
     private static String read(String relative) throws IOException {
-        return Files.readString(Path.of("src/main/java/com/rtsbuilding/rtsbuilding").resolve(relative));
+        return Files.readString(Path.of("src/main/java/awa/Aether_254/rtsbuilding").resolve(relative));
     }
 }

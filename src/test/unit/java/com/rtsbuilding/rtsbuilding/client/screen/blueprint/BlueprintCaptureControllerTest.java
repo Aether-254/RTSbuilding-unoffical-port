@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.client.screen.blueprint;
+package awa.Aether_254.rtsbuilding.client.screen.blueprint;
 
-import com.rtsbuilding.rtsbuilding.client.screen.culling.RtsCullingBox;
+import awa.Aether_254.rtsbuilding.client.screen.culling.RtsCullingBox;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.phys.Vec3;

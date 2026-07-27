@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.server.service.page;
+package awa.Aether_254.rtsbuilding.server.service.page;
 
-import com.rtsbuilding.rtsbuilding.network.storage.C2SRtsRequestStoragePagePayload;
+import awa.Aether_254.rtsbuilding.network.storage.C2SRtsRequestStoragePagePayload;
 import net.minecraft.resources.ResourceLocation;
 import org.junit.jupiter.api.Test;
 

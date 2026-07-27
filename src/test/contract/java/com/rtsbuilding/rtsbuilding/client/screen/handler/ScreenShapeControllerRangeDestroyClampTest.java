@@ -1,9 +1,9 @@
-package com.rtsbuilding.rtsbuilding.client.screen.handler;
+package awa.Aether_254.rtsbuilding.client.screen.handler;
 
-import com.rtsbuilding.rtsbuilding.client.screen.quickbuild.BuildShape;
-import com.rtsbuilding.rtsbuilding.client.screen.shape.ShapeBuildTypes;
-import com.rtsbuilding.rtsbuilding.client.screen.shape.ShapeGeometryUtil;
-import com.rtsbuilding.rtsbuilding.common.shape.model.ShapeFillMode;
+import awa.Aether_254.rtsbuilding.client.screen.quickbuild.BuildShape;
+import awa.Aether_254.rtsbuilding.client.screen.shape.ShapeBuildTypes;
+import awa.Aether_254.rtsbuilding.client.screen.shape.ShapeGeometryUtil;
+import awa.Aether_254.rtsbuilding.common.shape.model.ShapeFillMode;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import org.junit.jupiter.api.Test;
@@ -91,7 +91,7 @@ class ScreenShapeControllerRangeDestroyClampTest {
     @Test
     void advancedRoundShapesStartFromCenteredOrdinaryPreview() throws IOException {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/handler/ScreenShapeController.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/handler/ScreenShapeController.java"));
         String initialBox = methodBody(source, "private RtsCullingBox initialAdvancedShapeBox");
         String readySession = methodBody(source, "private ShapeBuildTypes.Session readySession");
 

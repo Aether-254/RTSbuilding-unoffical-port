@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.server.task.mining;
+package awa.Aether_254.rtsbuilding.server.task.mining;
 
-import com.rtsbuilding.rtsbuilding.server.task.MiningTaskPayload;
+import awa.Aether_254.rtsbuilding.server.task.MiningTaskPayload;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;

@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.server.culling;
+package awa.Aether_254.rtsbuilding.server.culling;
 
-import com.rtsbuilding.rtsbuilding.network.culling.RtsCullingBoxSnapshot;
+import awa.Aether_254.rtsbuilding.network.culling.RtsCullingBoxSnapshot;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import org.junit.jupiter.api.Test;

@@ -1,0 +1,65 @@
+package awa.Aether_254.rtsbuilding.network.progression.handler;
+
+import awa.Aether_254.rtsbuilding.Config;
+import awa.Aether_254.rtsbuilding.network.progression.*;
+import awa.Aether_254.rtsbuilding.server.camera.RtsCameraManager;
+import awa.Aether_254.rtsbuilding.server.plugin.RtsPluginService;
+import awa.Aether_254.rtsbuilding.server.progression.RtsProgressionManager;
+import awa.Aether_254.rtsbuilding.server.service.QuestService;
+import net.minecraft.server.level.ServerPlayer;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
+
+/**
+ * Server-side C2S adapter for quest detect and RTS-home actions.
+ */
+public final class RtsProgressionNetworkHandlers {
+    private RtsProgressionNetworkHandlers() {
+    }
+
+    public static void handleQuestDetect(C2SRtsQuestDetectPayload payload, IPayloadContext context) {
+        context.enqueueWork(() -> {
+            if (context.player() instanceof ServerPlayer serverPlayer) {
+                QuestService.detectQuests(serverPlayer, payload.mode());
+            }
+        });
+    }
+
+    public static void handleSetSurvivalProgression(C2SRtsSetSurvivalProgressionPayload payload, IPayloadContext context) {
+        context.enqueueWork(() -> {
+            if (context.player() instanceof ServerPlayer serverPlayer
+                    && net.minecraft.commands.Commands.LEVEL_GAMEMASTERS.check(serverPlayer.permissions())) {
+                Config.setSurvivalProgressionEnabled(payload.enabled());
+                serverPlayer.level().getServer().getPlayerList().getPlayers().forEach(player -> {
+                    RtsPluginService.syncToPlayer(player);
+                    RtsProgressionManager.syncToPlayer(player);
+                });
+            }
+        });
+    }
+
+    public static void handleSetHome(C2SRtsSetHomePayload payload, IPayloadContext context) {
+        context.enqueueWork(() -> {
+            if (context.player() instanceof ServerPlayer serverPlayer) {
+                if (RtsProgressionManager.commitHome(serverPlayer, payload.pos())) {
+                    RtsCameraManager.restartNormalFromHomeSelection(serverPlayer);
+                }
+            }
+        });
+    }
+
+    public static void handleBeginHomeSelection(C2SRtsBeginHomeSelectionPayload payload, IPayloadContext context) {
+        context.enqueueWork(() -> {
+            if (context.player() instanceof ServerPlayer serverPlayer) {
+                RtsCameraManager.startHomeSelectionFromPanel(serverPlayer);
+            }
+        });
+    }
+
+    public static void handleRequestProgressionState(C2SRtsRequestProgressionStatePayload payload, IPayloadContext context) {
+        context.enqueueWork(() -> {
+            if (context.player() instanceof ServerPlayer serverPlayer) {
+                RtsProgressionManager.syncToPlayer(serverPlayer);
+            }
+        });
+    }
+}

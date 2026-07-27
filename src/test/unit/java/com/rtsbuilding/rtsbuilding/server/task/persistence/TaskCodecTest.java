@@ -1,11 +1,11 @@
-package com.rtsbuilding.rtsbuilding.server.task.persistence;
+package awa.Aether_254.rtsbuilding.server.task.persistence;
 
-import com.rtsbuilding.rtsbuilding.server.task.identity.SubmissionId;
-import com.rtsbuilding.rtsbuilding.server.task.identity.TaskId;
-import com.rtsbuilding.rtsbuilding.server.task.TaskType;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.asset.TaskAssetId;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.asset.TaskAssetManifest;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.asset.TaskAssetMetadata;
+import awa.Aether_254.rtsbuilding.server.task.identity.SubmissionId;
+import awa.Aether_254.rtsbuilding.server.task.identity.TaskId;
+import awa.Aether_254.rtsbuilding.server.task.TaskType;
+import awa.Aether_254.rtsbuilding.server.task.persistence.asset.TaskAssetId;
+import awa.Aether_254.rtsbuilding.server.task.persistence.asset.TaskAssetManifest;
+import awa.Aether_254.rtsbuilding.server.task.persistence.asset.TaskAssetMetadata;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import org.junit.jupiter.api.Test;
@@ -107,7 +107,7 @@ class TaskCodecTest {
         sourcePayload.putInt("cursor_blob", 4);
         TaskSnapshot task = new TaskSnapshot(
                 TaskId.create(), SubmissionId.create(), UUID.randomUUID(), "minecraft:overworld",
-                com.rtsbuilding.rtsbuilding.server.task.TaskType.MINING,
+                awa.Aether_254.rtsbuilding.server.task.TaskType.MINING,
                 TaskLifecycleState.RUNNING, -1, null, 1L, 0L, 0L,
                 10, 0, 0, 0, sourcePayload);
 
@@ -171,7 +171,7 @@ class TaskCodecTest {
         payload.putString("text", "界".repeat(22_000));
         TaskSnapshot task = new TaskSnapshot(
                 TaskId.create(), SubmissionId.create(), UUID.randomUUID(), "minecraft:overworld",
-                com.rtsbuilding.rtsbuilding.server.task.TaskType.PLACEMENT,
+                awa.Aether_254.rtsbuilding.server.task.TaskType.PLACEMENT,
                 TaskLifecycleState.QUEUED, -1, null, 1L, 0L, 0L,
                 1, 0, 0, 0, payload);
 
@@ -198,7 +198,7 @@ class TaskCodecTest {
     void optionalWorkflowDefaultsOnlyWhenAbsentAndRejectsWrongType() {
         TaskSnapshot task = new TaskSnapshot(
                 TaskId.create(), SubmissionId.create(), UUID.randomUUID(), "minecraft:overworld",
-                com.rtsbuilding.rtsbuilding.server.task.TaskType.PLACEMENT,
+                awa.Aether_254.rtsbuilding.server.task.TaskType.PLACEMENT,
                 TaskLifecycleState.QUEUED, -1, null, 1L, 0L, 0L,
                 1, 0, 0, 0, new CompoundTag());
         CompoundTag absent = codec.encodeSnapshot(task);
@@ -212,7 +212,7 @@ class TaskCodecTest {
     void optionalWaitDefaultsOnlyWhenAbsentAndRejectsWrongType() {
         TaskSnapshot task = new TaskSnapshot(
                 TaskId.create(), SubmissionId.create(), UUID.randomUUID(), "minecraft:overworld",
-                com.rtsbuilding.rtsbuilding.server.task.TaskType.MINING,
+                awa.Aether_254.rtsbuilding.server.task.TaskType.MINING,
                 TaskLifecycleState.QUEUED, -1, null, 1L, 0L, 0L,
                 1, 0, 0, 0, new CompoundTag());
         CompoundTag absent = codec.encodeSnapshot(task);
@@ -275,18 +275,18 @@ class TaskCodecTest {
     void dimensionMustBeCanonicalResourceLocationAndWaitKeyCountsTowardBudget() {
         assertThrows(IllegalArgumentException.class, () -> new TaskSnapshot(
                 TaskId.create(), SubmissionId.create(), UUID.randomUUID(), "Bad Dimension",
-                com.rtsbuilding.rtsbuilding.server.task.TaskType.MINING,
+                awa.Aether_254.rtsbuilding.server.task.TaskType.MINING,
                 TaskLifecycleState.QUEUED, -1, null, 1L, 0L, 0L,
                 1, 0, 0, 0, new CompoundTag()));
 
         TaskSnapshot plain = new TaskSnapshot(
                 TaskId.create(), SubmissionId.create(), UUID.randomUUID(), "minecraft:overworld",
-                com.rtsbuilding.rtsbuilding.server.task.TaskType.MINING,
+                awa.Aether_254.rtsbuilding.server.task.TaskType.MINING,
                 TaskLifecycleState.QUEUED, -1, null, 1L, 0L, 0L,
                 1, 0, 0, 0, new CompoundTag());
         TaskSnapshot waiting = new TaskSnapshot(
                 TaskId.create(), SubmissionId.create(), UUID.randomUUID(), "minecraft:overworld",
-                com.rtsbuilding.rtsbuilding.server.task.TaskType.MINING,
+                awa.Aether_254.rtsbuilding.server.task.TaskType.MINING,
                 TaskLifecycleState.WAITING_RESOURCE, -1,
                 new TaskWaitKey("item", "minecraft:oak_log"), 1L, 0L, 0L,
                 1, 0, 0, 0, new CompoundTag());

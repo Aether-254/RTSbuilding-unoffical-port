@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.compat.openpac;
+package awa.Aether_254.rtsbuilding.compat.openpac;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,8 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class RtsOpenPacCompatContractTest {
     @Test
     void openPacCompatStaysOptionalAndUsesServerApiReflection() throws IOException {
-        String facade = read("src/main/java/com/rtsbuilding/rtsbuilding/compat/openpac/RtsOpenPacCompat.java");
-        String impl = read("src/main/java/com/rtsbuilding/rtsbuilding/compat/openpac/RtsOpenPacCompatImpl.java");
+        String facade = read("src/main/java/awa/Aether_254/rtsbuilding/compat/openpac/RtsOpenPacCompat.java");
+        String impl = read("src/main/java/awa/Aether_254/rtsbuilding/compat/openpac/RtsOpenPacCompatImpl.java");
 
         assertTrue(facade.contains("ModList.get().isLoaded(MOD_ID)"),
                 "OpenPAC compat must stay disabled unless the mod is present");
@@ -25,7 +25,7 @@ class RtsOpenPacCompatContractTest {
 
     @Test
     void openPacCompatChecksPartiesAndActionSpecificClaimProtection() throws IOException {
-        String impl = read("src/main/java/com/rtsbuilding/rtsbuilding/compat/openpac/RtsOpenPacCompatImpl.java");
+        String impl = read("src/main/java/awa/Aether_254/rtsbuilding/compat/openpac/RtsOpenPacCompatImpl.java");
 
         assertTrue(impl.contains("getPartyByMember"),
                 "OpenPAC party lookup should use the player's current party");

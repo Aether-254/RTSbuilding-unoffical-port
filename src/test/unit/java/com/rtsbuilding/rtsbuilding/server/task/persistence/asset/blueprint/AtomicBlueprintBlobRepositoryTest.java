@@ -1,7 +1,7 @@
-package com.rtsbuilding.rtsbuilding.server.task.persistence.asset.blueprint;
+package awa.Aether_254.rtsbuilding.server.task.persistence.asset.blueprint;
 
-import com.rtsbuilding.rtsbuilding.server.task.identity.TaskId;
-import com.rtsbuilding.rtsbuilding.server.task.persistence.asset.TaskAssetId;
+import awa.Aether_254.rtsbuilding.server.task.identity.TaskId;
+import awa.Aether_254.rtsbuilding.server.task.persistence.asset.TaskAssetId;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.IntTag;
 import net.minecraft.nbt.ListTag;

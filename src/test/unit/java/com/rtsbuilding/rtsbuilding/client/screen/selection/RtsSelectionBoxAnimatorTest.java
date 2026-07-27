@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.client.screen.selection;
+package awa.Aether_254.rtsbuilding.client.screen.selection;
 
-import com.rtsbuilding.rtsbuilding.client.screen.culling.RtsCullingBox;
+import awa.Aether_254.rtsbuilding.client.screen.culling.RtsCullingBox;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.phys.AABB;
 import org.junit.jupiter.api.Test;

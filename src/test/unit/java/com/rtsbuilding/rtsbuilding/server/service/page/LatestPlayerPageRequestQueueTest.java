@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.service.page;
+package awa.Aether_254.rtsbuilding.server.service.page;
 
 import org.junit.jupiter.api.Test;
 

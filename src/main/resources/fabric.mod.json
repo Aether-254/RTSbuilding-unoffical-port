@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "id": "rtsbuilding",
+  "version": "${version}",
+  "name": "RTS Building: Build From Above (Unofficial Fabric Port)",
+  "description": "Unofficial Fabric 1.21.11 port of RTS Building for Create Fly, with EMI and sakura-ryoko Litematica integration.",
+  "authors": [
+    "Hcrab",
+    "Aether_254"
+  ],
+  "contact": {
+    "sources": "https://github.com/Aether-254/RTSbuilding-unoffical-port",
+    "issues": "https://github.com/Aether-254/RTSbuilding-unoffical-port/issues"
+  },
+  "license": "LGPL-3.0-only",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "awa.Aether_254.rtsbuilding.RtsbuildingMod"
+    ],
+    "client": [
+      "awa.Aether_254.rtsbuilding.client.bootstrap.RtsClientBootstrap"
+    ],
+    "emi": [
+      "awa.Aether_254.rtsbuilding.compat.emi.RtsEmiPlugin"
+    ]
+  },
+  "mixins": [
+    "rtsbuilding.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "fabric-api": "*",
+    "minecraft": "1.21.11",
+    "create": ">=6.0.9-5"
+  },
+  "suggests": {
+    "emi": "*",
+    "litematica": "*",
+    "malilib": "*"
+  }
+}

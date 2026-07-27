@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.task;
+package awa.Aether_254.rtsbuilding.server.task;
 
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /** 防止事件整理时把 durable task 冲刷退回世界停止后，或放到 Session 清理之后。 */
 class TaskPersistenceLifecycleContractTest {
     private static final Path MOD_ENTRY = Path.of(
-            "src/main/java/com/rtsbuilding/rtsbuilding/RtsbuildingMod.java");
+            "src/main/java/awa/Aether_254/rtsbuilding/RtsbuildingMod.java");
 
     @Test
     void lifecycleUsesStartingPostTickOwnerLogoutAndStoppedBoundaries() throws IOException {

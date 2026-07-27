@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.standalone;
+package awa.Aether_254.rtsbuilding.client.screen.standalone;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class PlacementStateWheelRoutingContractTest {
     @Test
     void placementWheelGetsRBeforeRotateModeAndUsesSeparateAction() throws Exception {
         String source = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/BuilderScreen.java"));
         int placementRoute = source.indexOf("openPlacementStateWheel(currentMouseX(), currentMouseY())");
         int modeRoute = source.indexOf("handleModeKeyPressed(keyCode, scanCode)", placementRoute);
         assertTrue(placementRoute >= 0);
@@ -29,11 +29,11 @@ class PlacementStateWheelRoutingContractTest {
         assertTrue(source.contains("GLFW.glfwSetCursorPos("));
 
         String picker = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/input/CameraInputHandler.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/input/CameraInputHandler.java"));
         String placementService = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/service/BuildPlacementService.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/service/BuildPlacementService.java"));
         String preset = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/common/placement/PlacementStatePreset.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/common/placement/PlacementStatePreset.java"));
         assertTrue(picker.contains("this.controller.copyPlacementState(state);"));
         assertTrue(placementService.contains("private String placementStateItemId = \"\";"));
         assertTrue(placementService.contains("!nextItemId.equals(this.placementStateItemId)"),
@@ -42,7 +42,7 @@ class PlacementStateWheelRoutingContractTest {
         assertTrue(preset.contains("state.getBlock() instanceof SlabBlock && !\"double\".equals(valueName)"));
 
         String wheel = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/client/screen/mode/PlacementStateWheel.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/client/screen/mode/PlacementStateWheel.java"));
         assertTrue(wheel.contains("private static final int PLACEMENT_PAGE_SIZE = 8"));
         assertTrue(wheel.contains("PlacementStateCombinationPlan.combinations("),
                 "放置轮盘应生成完整状态组合，而不是把每个属性强行画成同心层");

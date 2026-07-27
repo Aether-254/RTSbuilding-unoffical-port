@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.plugin;
+package awa.Aether_254.rtsbuilding.server.plugin;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,9 +12,9 @@ class RtsPluginDurabilityContractTest {
     @Test
     void pluginMutationPersistsPluginStateAndInventoryBeforeReturning() throws IOException {
         String durability = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/plugin/RtsPluginDurability.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/plugin/RtsPluginDurability.java"));
         String teamService = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/plugin/RtsPluginTeamService.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/plugin/RtsPluginTeamService.java"));
 
         assertTrue(teamService.contains("RtsPluginDurability.checkpoint(player);"),
                 "个人与队伍插件保存入口都必须经过即时耐久化检查点。");

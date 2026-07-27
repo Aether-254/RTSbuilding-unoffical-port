@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.client.screen.culling;
+package awa.Aether_254.rtsbuilding.client.screen.culling;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

@@ -1,7 +1,7 @@
-package com.rtsbuilding.rtsbuilding.server.plugin;
+package awa.Aether_254.rtsbuilding.server.plugin;
 
-import com.rtsbuilding.rtsbuilding.server.progression.RtsFeature;
-import com.rtsbuilding.rtsbuilding.server.service.mining.RangeMiningHarvestTier;
+import awa.Aether_254.rtsbuilding.server.progression.RtsFeature;
+import awa.Aether_254.rtsbuilding.server.service.mining.RangeMiningHarvestTier;
 import net.minecraft.resources.ResourceLocation;
 import org.junit.jupiter.api.Test;
 

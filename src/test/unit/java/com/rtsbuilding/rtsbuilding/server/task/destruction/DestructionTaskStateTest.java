@@ -1,6 +1,6 @@
-package com.rtsbuilding.rtsbuilding.server.task.destruction;
+package awa.Aether_254.rtsbuilding.server.task.destruction;
 
-import com.rtsbuilding.rtsbuilding.server.task.DestructionTaskPayload;
+import awa.Aether_254.rtsbuilding.server.task.DestructionTaskPayload;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;

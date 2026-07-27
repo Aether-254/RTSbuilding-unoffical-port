@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.plugin;
+package awa.Aether_254.rtsbuilding.server.plugin;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class RtsTeamPluginSharingContractTest {
     @Test
     void sharedPluginsRemainTeamPersistentButContributorOwned() throws IOException {
-        String teamService = read("src/main/java/com/rtsbuilding/rtsbuilding/server/plugin/RtsPluginTeamService.java");
-        String sharedData = read("src/main/java/com/rtsbuilding/rtsbuilding/server/data/RtsSharedProgressionData.java");
-        String pluginService = read("src/main/java/com/rtsbuilding/rtsbuilding/server/plugin/RtsPluginService.java");
+        String teamService = read("src/main/java/awa/Aether_254/rtsbuilding/server/plugin/RtsPluginTeamService.java");
+        String sharedData = read("src/main/java/awa/Aether_254/rtsbuilding/server/data/RtsSharedProgressionData.java");
+        String pluginService = read("src/main/java/awa/Aether_254/rtsbuilding/server/plugin/RtsPluginService.java");
 
         assertTrue(teamService.contains("RtsSharedProgressionData.SharedPlugin"),
                 "team plugin state should be persisted on shared progression data");
@@ -27,8 +27,8 @@ class RtsTeamPluginSharingContractTest {
 
     @Test
     void teamPluginUiHasManualRefreshTeamNameAndOwnerStatus() throws IOException {
-        String payload = read("src/main/java/com/rtsbuilding/rtsbuilding/network/plugin/S2CRtsPluginStatePayload.java");
-        String screen = read("src/main/java/com/rtsbuilding/rtsbuilding/client/screen/standalone/RtsPluginManagementScreen.java");
+        String payload = read("src/main/java/awa/Aether_254/rtsbuilding/network/plugin/S2CRtsPluginStatePayload.java");
+        String screen = read("src/main/java/awa/Aether_254/rtsbuilding/client/screen/standalone/RtsPluginManagementScreen.java");
 
         assertTrue(payload.contains("List<String> ownerNames") && payload.contains("String teamName"),
                 "plugin sync payload should carry team name and contributor names");
@@ -42,7 +42,7 @@ class RtsTeamPluginSharingContractTest {
 
     @Test
     void existingPersonalPluginInstallsCanMigrateIntoTeamState() throws IOException {
-        String teamService = read("src/main/java/com/rtsbuilding/rtsbuilding/server/plugin/RtsPluginTeamService.java");
+        String teamService = read("src/main/java/awa/Aether_254/rtsbuilding/server/plugin/RtsPluginTeamService.java");
 
         assertTrue(teamService.contains("migratePersonalPluginsIntoTeam"),
                 "old personal plugin installs should not silently disappear when team sharing is enabled");

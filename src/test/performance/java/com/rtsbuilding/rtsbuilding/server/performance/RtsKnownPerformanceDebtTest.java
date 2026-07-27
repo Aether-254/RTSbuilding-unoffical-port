@@ -1,4 +1,4 @@
-package com.rtsbuilding.rtsbuilding.server.performance;
+package awa.Aether_254.rtsbuilding.server.performance;
 
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Tag;
@@ -21,9 +21,9 @@ class RtsKnownPerformanceDebtTest {
 
     @Test
     void batchProgressMustCoalesceStorageRefreshInsteadOfForcingFullRefreshPerJob() throws Exception {
-        String batchOps = readIfPresent("src/main/java/com/rtsbuilding/rtsbuilding/server/service/RtsBatchJobTickOps.java");
-        String placement = readIfPresent("src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementBatch.java");
-        String destruction = readIfPresent("src/main/java/com/rtsbuilding/rtsbuilding/server/service/destruction/RtsDestructionBatch.java");
+        String batchOps = readIfPresent("src/main/java/awa/Aether_254/rtsbuilding/server/service/RtsBatchJobTickOps.java");
+        String placement = readIfPresent("src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementBatch.java");
+        String destruction = readIfPresent("src/main/java/awa/Aether_254/rtsbuilding/server/service/destruction/RtsDestructionBatch.java");
         String combined = batchOps + placement + destruction;
 
         boolean usesDeferredRefresh = combined.contains("markDirtyDeferred")
@@ -40,7 +40,7 @@ class RtsKnownPerformanceDebtTest {
     @Test
     void placementTickMustNotRescanEveryTargetForProgress() throws Exception {
         String placement = Files.readString(Path.of(
-                "src/main/java/com/rtsbuilding/rtsbuilding/server/service/placement/RtsPlacementBatch.java"));
+                "src/main/java/awa/Aether_254/rtsbuilding/server/service/placement/RtsPlacementBatch.java"));
         boolean rescansEveryTick = placement.contains("RtsProgressRefresher.refreshWorkflowProgress(player, session)")
                 || placement.contains("RtsPendingPlacementService.refreshWorkflowProgress(player, session)");
         System.out.printf("[已知性能债][放置] 每 tick 全量世界进度重扫=%s%n", rescansEveryTick);
@@ -49,7 +49,7 @@ class RtsKnownPerformanceDebtTest {
 
     @Test
     void everySkippedDestroyTargetMustConsumeTickBudget() throws Exception {
-        Path file = Path.of("src/main/java/com/rtsbuilding/rtsbuilding/server/service/destruction/RtsDestructionBatch.java");
+        Path file = Path.of("src/main/java/awa/Aether_254/rtsbuilding/server/service/destruction/RtsDestructionBatch.java");
         Assumptions.assumeTrue(Files.isRegularFile(file), "当前版本没有独立 DestructionBatch");
         String source = Files.readString(file);
         int detached = source.indexOf("tickDetachedDestructionSlice(");
