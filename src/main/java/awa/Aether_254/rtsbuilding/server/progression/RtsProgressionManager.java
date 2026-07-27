@@ -23,10 +23,13 @@ public final class RtsProgressionManager {
     private RtsProgressionManager() {
     }
 
-    public static boolean isEnabled() {
+ public static boolean isEnabled() {
+    try {
         return Config.ENABLE_SURVIVAL_PROGRESSION.getAsBoolean();
+    } catch (IllegalStateException e) {
+        return false;
     }
-
+}
     public static boolean canUse(ServerPlayer player, RtsFeature feature) {
         return RtsPluginService.canUse(player, feature);
     }
